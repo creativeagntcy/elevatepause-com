@@ -176,24 +176,13 @@
       width: 100%;
       max-width: 400px;
       height: 500px;
-      background-image: url('/assets/shifther-panel.png');
-      background-size: cover;
-      background-position: center;
+      background: linear-gradient(135deg, #f1efff, #c8c4e8);
       border-radius: 0 120px 120px 0;
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .hero-placeholder::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, rgba(61, 24, 96, 0.25) 0%, rgba(115, 95, 207, 0.15) 100%);
-      border-radius: inherit;
-      z-index: 1;
     }
 
     .hero-placeholder-ornament {
@@ -207,7 +196,7 @@
       transform: translate(-50%, -50%);
       animation: float 8s ease-in-out infinite;
       z-index: 2;
-      opacity: 0.3;
+      opacity: 0.6;
     }
 
     @keyframes float {
