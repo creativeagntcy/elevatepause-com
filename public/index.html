@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>elevatePAUSE™ — Join the Waitlist</title>
+  <meta name="description" content="A curated experience for women navigating midlife who are ready to make informed decisions about their wellness and longevity." />
+  <meta property="og:title" content="elevatePAUSE™ — Join the Waitlist | shiftHER" />
+  <meta property="og:description" content="A curated experience for women navigating midlife who are ready to make informed decisions about their wellness and longevity. Coming 2026, Atlanta GA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://elevatepause.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="elevatePAUSE™ — Join the Waitlist" />
+  <meta name="twitter:description" content="A curated experience for women navigating midlife. Inform. Empower. Advocate. Coming 2026 · Atlanta, GA." />
+  <link rel="canonical" href="https://elevatepause.com" />
+  <style>
+    /* ── Reset + Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:           #3d1860;
+      --plum-light:     #735fcf;
+      --plum-deep:      #3d1860;
+      --plum-dark:      #2a2661;
+      --lavender:       #c8c4e8;
+      --lavender-light: #f1efff;
+      --purple-light:   #a08ce0;
+      --text-dark:      #3d1860;
+      --text-mid:       #2a2661;
+      --cream:          #f1efff;
+      --lime-cta:       #84cf06;
+      --lime-hover:     #6aab05;
+      --cta-lime-glow:  #dcf298;
+      --white:          #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      color: var(--text-dark);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    /* ── Animations ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── HEADER/BRAND MARK ── */
+    .header-brand {
+      position: fixed;
+      top: 32px;
+      left: 32px;
+      z-index: 100;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .header-brand-elevate {
+      color: var(--text-dark);
+    }
+
+    .header-brand-pause {
+      color: var(--plum);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      padding: 80px 40px;
+      background: linear-gradient(135deg, rgba(61, 24, 96, 0.72) 0%, rgba(42, 38, 97, 0.60) 50%, rgba(115, 95, 207, 0.45) 100%), url('/assets/shifther-hero.png') center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      padding-right: 40px;
+    }
+
+    .hero-eyebrow {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      opacity: 0.95;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 6vw, 90px);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+
+    .hero h1 .brand-elevate {
+      color: var(--white);
+    }
+
+    .hero h1 .brand-pause {
+      color: #dcf298;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 2px;
+      background: #dcf298;
+      margin-bottom: 28px;
+      margin-top: 16px;
+    }
+
+    .hero-subhead {
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.95);
+      max-width: 500px;
+      margin-bottom: 44px;
+      line-height: 1.65;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--lime-cta);
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .hero-cta:hover {
+      background: var(--lime-hover);
+      transform: translateY(-2px);
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+    }
+
+    .hero-placeholder {
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      background: linear-gradient(135deg, rgba(241, 239, 255, 0.25) 0%, rgba(200, 196, 232, 0.20) 100%);
+      border-radius: 0 120px 120px 0;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-placeholder-ornament {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(115, 95, 207, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-20px); }
+    }
+
+    /* ── THREE PILLARS ── */
+    .pillars {
+      padding: 100px 40px;
+      background: var(--lavender-light);
+    }
+
+    .section-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--plum);
+      text-align: center;
+      margin-bottom: 48px;
+      opacity: 0.75;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .pillar-card {
+      padding: 48px 32px;
+      border-right: 1px solid #c8c4e8;
+      position: relative;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .pillar-card:last-child {
+      border-right: none;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .pillar-icon-circle {
+      width: 56px;
+      height: 56px;
+      background: #735fcf;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .pillar-icon-circle svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--white);
+      fill: none;
+    }
+
+    .pillar-card h3 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 16px;
+    }
+
+    .pillar-card p {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .pillars-tagline {
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--plum);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── QUESTION HOOK ── */
+    .question-hook {
+      padding: 100px 40px;
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .question-left {
+      padding-left: 60px;
+      border-left: 3px solid #735fcf;
+      position: relative;
+    }
+
+    .question-hook blockquote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--plum);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    .question-hook p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 450px;
+    }
+
+    .question-right {
+      background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender) 100%);
+      padding: 60px 40px;
+      border-radius: 12px;
+    }
+
+    .form-preview-content {
+      text-align: center;
+      color: var(--plum);
+    }
+
+    .form-preview-content p {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    /* ── PAIN POINTS ── */
+    .pain-points {
+      padding: 100px 40px;
+      background: var(--cream);
+    }
+
+    .pain-points h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 600;
+      color: var(--plum);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      line-height: 1.25;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 40px 28px;
+      border-top: 3px solid #c8c4e8;
+    }
+
+    .stat-card p {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    /* ── WHAT TO EXPECT ── */
+    .what-to-expect {
+      padding: 100px 40px;
+      background: var(--plum);
+    }
+
+    .what-to-expect .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .what-to-expect .section-label {
+      color: #c8c4e8;
+    }
+
+    .what-to-expect h2 {
+      font-size: clamp(38px, 6vw, 56px);
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+
+    .expect-card {
+      padding: 40px 32px;
+      border: 1px solid rgba(200, 196, 232, 0.3);
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .expect-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .expect-card h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #f1efff;
+      margin-bottom: 16px;
+    }
+
+    .expect-card p {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(241, 239, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .stats-bar {
+      text-align: center;
+      border-top: 1px solid rgba(200, 196, 232, 0.25);
+      padding-top: 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .stats-bar p {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #c8c4e8;
+      opacity: 0.85;
+    }
+
+    .stats-bar p span {
+      margin: 0 12px;
+      opacity: 0.4;
+    }
+
+    /* ── WHO THIS IS FOR ── */
+    .who-its-for {
+      padding: 100px 40px;
+      background: var(--lavender-light);
+    }
+
+    .who-its-for h2 {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 600;
+      color: var(--plum);
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .checklist {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      background: #735fcf;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .check-item p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.55;
+    }
+
+    /* ── SPLIT SECTION: QUOTE + WAITLIST ── */
+    .quote-form-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--cream);
+      min-height: 600px;
+    }
+
+    .quote-section {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 2px solid #735fcf;
+    }
+
+    .quote-section blockquote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .quote-section p {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .form-section {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--lavender-light);
+    }
+
+    /* ── WAITLIST FORM ── */
+    .waitlist-inner {
+      max-width: 100%;
+    }
+
+    .form-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .form-subhead {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-mid);
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--plum);
+      margin-bottom: 8px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid rgba(61, 24, 96, 0.15);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-dark);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(61, 24, 96, 0.4);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--plum);
+      box-shadow: 0 0 0 3px rgba(115, 95, 207, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit-area {
+      margin-top: 32px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--lime-cta);
+      color: #000000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 16px 44px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: var(--lime-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .form-error {
+      background: rgba(220, 80, 80, 0.1);
+      border: 1px solid rgba(220, 80, 80, 0.3);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #c74848;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .form-disclaimer {
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-mid);
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    .form-success {
+      text-align: center;
+      padding: 60px 24px;
+      display: none;
+    }
+
+    .form-success .success-icon {
+      font-size: 48px;
+      margin-bottom: 24px;
+      color: var(--plum);
+    }
+
+    .form-success h3 {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-mid);
+    }
+
+    /* ── FAQ SECTION ── */
+    .faq-section {
+      padding: 100px 40px;
+      background: var(--cream);
+    }
+
+    .faq-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(115, 95, 207, 0.15);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--plum);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .faq-a {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #3d1860;
+      padding: 48px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(200, 196, 232, 0.2);
+    }
+
+    .footer-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #c8c4e8;
+      margin-bottom: 10px;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(200, 196, 232, 0.6);
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(200, 196, 232, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #c8c4e8;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .header-brand {
+        top: 20px;
+        left: 20px;
+        font-size: 16px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 120px 24px 60px;
+      }
+
+      .hero-left {
+        padding-right: 0;
+        margin-bottom: 60px;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
+      .pillars {
+        padding: 80px 24px;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .pillar-card {
+        border-right: none;
+        border-bottom: 1px solid var(--lavender);
+      }
+
+      .pillar-card:last-child {
+        border-bottom: none;
+      }
+
+      .question-hook {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 80px 24px;
+      }
+
+      .question-left {
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid #735fcf;
+        padding-top: 40px;
+      }
+
+      .question-right {
+        margin-top: 20px;
+      }
+
+      .pain-points {
+        padding: 80px 24px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .what-to-expect {
+        padding: 80px 24px;
+      }
+
+      .expect-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .who-its-for {
+        padding: 80px 24px;
+      }
+
+      .quote-form-split {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-section {
+        padding: 60px 24px;
+        border-right: none;
+        border-bottom: 2px solid #735fcf;
+      }
+
+      .form-section {
+        padding: 60px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-section {
+        padding: 80px 24px;
+      }
+
+      .faq-item {
+        padding: 32px 0;
+      }
+
+      footer {
+        padding: 40px 24px;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Event","name":"elevatePAUSE™","description":"A curated experience for women navigating midlife who are ready to make informed decisions about their wellness and longevity.","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","startDate":"2026","location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Atlanta","addressRegion":"GA","addressCountry":"US"}},"organizer":{"@type":"Organization","name":"shiftHER","url":"https://shifther.in"},"audience":{"@type":"Audience","audienceType":"Women in midlife, ages 40-60, navigating perimenopause and menopause"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is elevatePAUSE™?","acceptedAnswer":{"@type":"Answer","text":"elevatePAUSE™ is a curated in-person experience for women in midlife, built by shiftHER™. It brings together expert speakers, actionable frameworks, and a community of women navigating perimenopause and menopause."}},{"@type":"Question","name":"When and where is elevatePAUSE™ happening?","acceptedAnswer":{"@type":"Answer","text":"elevatePAUSE™ is coming to Atlanta, GA in 2026. Exact date and venue announced to waitlist members first. Seats are limited."}},{"@type":"Question","name":"Who is elevatePAUSE™ designed for?","acceptedAnswer":{"@type":"Answer","text":"Women in their 40s and 50s navigating perimenopause or menopause who want evidence-based information and practical tools for self-advocacy in healthcare."}},{"@type":"Question","name":"What will attendees get from elevatePAUSE™?","acceptedAnswer":{"@type":"Answer","text":"A clearer understanding of their own body, practical frameworks for informed wellness decisions, and the language to advocate for themselves in medical settings."}}]}
+  </script>
+  <!-- GTM -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-W5433M79"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GTM-W5433M79');
+  </script>
+</head>
+<body>
+
+  <!-- HEADER BRAND MARK -->
+  <div class="header-brand">
+    <span class="header-brand-elevate">elevate</span><span class="header-brand-pause">PAUSE™</span>
+  </div>
+
+  <!-- HERO SPLIT -->
+  <section class="hero fade-in">
+    <div class="hero-left">
+      <p class="hero-eyebrow">A shiftHER™ Experience</p>
+      <h1>
+        <span class="brand-elevate">elevatePAUSE™</span><br />
+        <span class="brand-pause">is coming.</span>
+      </h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-subhead">A curated experience for women navigating midlife who are ready to make informed decisions about their wellness and longevity — and advocate for themselves with confidence.</p>
+      <a href="#waitlist" class="hero-cta">Join the Waitlist</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-placeholder">
+        <div class="hero-placeholder-ornament" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="pillars">
+    <p class="section-label fade-in">Our Approach</p>
+    <div class="pillars-grid">
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4h18a2 2 0 012 2v24a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 11h12M10 16h12M10 21h8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Inform</h3>
+        <p>Evidence-based information on midlife hormonal health, metabolic shifts, and longevity markers — explained in plain language.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="12" stroke-width="1.5"/>
+            <path d="M18 11v4M18 21v4M11 18h4M21 18h4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="18" r="3" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Empower</h3>
+        <p>Tools, frameworks, and conversations that help you understand your own body and make decisions with clarity instead of guessing.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon-circle" aria-hidden="true">
+          <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 14h4l10-6v20l-10-6H8a2 2 0 01-2-2v-4a2 2 0 012-2z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M26 13c1.5 1.2 2.5 3 2.5 5s-1 3.8-2.5 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 24v4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Advocate</h3>
+        <p>Because the healthcare system wasn't built with you in mind. We'll show you how to ask better questions, push for better answers, and get the care you deserve.</p>
+      </div>
+    </div>
+    <p class="pillars-tagline fade-in">We Inform. We Empower. We Advocate.</p>
+  </section>
+
+  <!-- QUESTION HOOK + FORM PREVIEW -->
+  <section class="question-hook">
+    <div class="question-left fade-in">
+      <blockquote>"Are you clear on what your body needs in this season?"</blockquote>
+      <p>Most women aren't. Not because they haven't tried — but because the information they've been given wasn't designed for them.</p>
+    </div>
+    <div class="question-right fade-in">
+      <div class="form-preview-content">
+        <p>Because guessing your way through midlife is expensive.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS / STATS -->
+  <section class="pain-points">
+    <h2 class="fade-in">The reality most women face.</h2>
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <p>The average woman spends 12+ years in perimenopause — often without knowing it.</p>
+      </div>
+      <div class="stat-card fade-in">
+        <p>Most midlife symptoms are treatable. Most go unaddressed.</p>
+      </div>
+      <div class="stat-card fade-in">
+        <p>Clarity isn't a luxury. It's a health outcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="what-to-expect">
+    <div class="section-header">
+      <p class="section-label fade-in">The Experience</p>
+      <h2 class="fade-in">What You Can Expect</h2>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-card fade-in">
+        <h3>Expert conversations</h3>
+        <p>Curated speakers and practitioners with real expertise in women's midlife health, hormones, and longevity.</p>
+      </div>
+      <div class="expect-card fade-in">
+        <h3>Actionable frameworks</h3>
+        <p>Leave with a clear picture of where you are, what you need, and how to get it — not a list of supplements.</p>
+      </div>
+      <div class="expect-card fade-in">
+        <h3>A room that gets it</h3>
+        <p>You won't have to explain yourself. Every woman in the room is navigating the same terrain.</p>
+      </div>
+    </div>
+    <div class="stats-bar fade-in">
+      <p>Coming 2026 <span>·</span> Atlanta, GA <span>·</span> Limited Seats</p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section class="who-its-for">
+    <h2 class="fade-in">You belong here if...</h2>
+    <ul class="checklist" role="list">
+      <li class="check-item fade-in">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <p>You're in your 40s or 50s and something feels different</p>
+      </li>
+      <li class="check-item fade-in">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <p>You've asked your doctor about hormones and felt dismissed</p>
+      </li>
+      <li class="check-item fade-in">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <p>You want to understand your labs, not just be told your results are "normal"</p>
+      </li>
+      <li class="check-item fade-in">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <p>You're making wellness decisions based on vibes and hope — and you're done with that</p>
+      </li>
+      <li class="check-item fade-in">
+        <span class="check-icon" aria-hidden="true">✓</span>
+        <p>You want to be the most informed person in the room when it comes to your own health</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- QUOTE + FORM SPLIT -->
+  <section class="quote-form-split" id="waitlist">
+    <div class="quote-section fade-in">
+      <blockquote>"Clarity isn't a luxury.<br />It's a health outcome."</blockquote>
+      <p>We're building elevatePAUSE™ for women who are ready to own their health story and make decisions from a place of informed confidence.</p>
+    </div>
+    <div class="form-section fade-in">
+      <div class="waitlist-inner">
+        <div class="form-title">Get early access.</div>
+        <p class="form-subhead">Launch details and early access announcements coming soon. Be first to know.</p>
+
+        <div id="form-container">
+          <form id="waitlist-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="wellness_question">What are you hoping to better understand about your wellness right now? <em style="opacity:.6;font-style:normal;">(optional)</em></label>
+              <textarea id="wellness_question" name="wellness_question" placeholder="Share as much or as little as you'd like..."></textarea>
+            </div>
+            <div class="form-submit-area">
+              <button type="submit" class="btn-submit" id="submit-btn">Join the Waitlist</button>
+              <div class="form-error" id="form-error" role="alert"></div>
+              <p class="form-disclaimer">No spam. No selling your info. Just elevatePAUSE updates.</p>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-success" id="form-success" aria-live="polite">
+          <div class="success-icon">✦</div>
+          <h3>You're on the list.</h3>
+          <p>We'll be in touch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" aria-labelledby="faq-heading">
+    <div class="faq-inner">
+      <h2 id="faq-heading" class="fade-in">Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <h3 class="faq-q">What is elevatePAUSE™?</h3>
+          <p class="faq-a">elevatePAUSE™ is a curated in-person experience for women in midlife, built by shiftHER™. It brings together expert speakers, actionable frameworks, and a community of women navigating perimenopause and menopause — focused on informed decision-making and self-advocacy in healthcare.</p>
+        </div>
+        <div class="faq-item fade-in">
+          <h3 class="faq-q">When and where is it happening?</h3>
+          <p class="faq-a">elevatePAUSE™ is coming to Atlanta, GA in 2026. Exact date and venue will be announced to the waitlist first. Seats are limited.</p>
+        </div>
+        <div class="faq-item fade-in">
+          <h3 class="faq-q">Who is this experience designed for?</h3>
+          <p class="faq-a">Women in their 40s and 50s navigating perimenopause or menopause who want evidence-based information, practical tools, and a community that understands what they're going through — without the noise.</p>
+        </div>
+        <div class="faq-item fade-in">
+          <h3 class="faq-q">What will I actually walk away with?</h3>
+          <p class="faq-a">A clearer understanding of your own body, practical frameworks for making informed wellness decisions, and the language to advocate for yourself in medical settings. Not a supplement stack. Not generic advice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-brand">elevatePAUSE™ | Built by shiftHER™</p>
+    <p class="footer-copy">© 2026 shiftHER. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ── Scroll fade-in ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // ── Form submission ──
+    const form = document.getElementById('waitlist-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formError = document.getElementById('form-error');
+    const formContainer = document.getElementById('form-container');
+    const formSuccess = document.getElementById('form-success');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.style.display = 'none';
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName  = document.getElementById('lastName').value.trim();
+      const email     = document.getElementById('email').value.trim();
+      const wellness_question = document.getElementById('wellness_question').value.trim();
+
+      // Basic validation
+      if (!firstName || !lastName || !email) {
+        formError.textContent = 'Please fill in your first name, last name, and email.';
+        formError.style.display = 'block';
+        return;
+      }
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        formError.textContent = 'Please enter a valid email address.';
+        formError.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Joining...';
+
+      try {
+        const res = await fetch('https://creativeagntcy.com/api/elevatepause-waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ firstName, lastName, email, wellness_question })
+        });
+
+        if (!res.ok) {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Something went wrong. Please try again.');
+        }
+
+        // Success
+        formContainer.style.display = 'none';
+        formSuccess.style.display = 'block';
+
+      } catch (err) {
+        formError.textContent = err.message || 'Something went wrong. Please try again.';
+        formError.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Join the Waitlist';
+      }
+    });
+  </script>
+</body>
+</html>
