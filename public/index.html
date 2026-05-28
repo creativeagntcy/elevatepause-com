@@ -317,12 +317,12 @@
     /* ── What to Expect ── */
     .expect-section {
       padding: 100px 40px;
-      background: var(--plum);
+      background: var(--lavender-light);
     }
-    .expect-section .section-label { color: var(--lavender); }
+    .expect-section .section-label { color: var(--plum); }
     .expect-section h2 {
       font-size: clamp(32px, 5vw, 52px);
-      color: var(--white);
+      color: var(--plum);
       text-align: center;
       margin-bottom: 60px;
     }
@@ -335,13 +335,14 @@
     }
     .expect-card {
       padding: 40px 32px;
-      border: 1px solid rgba(200,196,232,0.3);
+      border: 1px solid rgba(61,24,96,0.12);
       border-radius: 8px;
-      transition: background 0.2s;
+      background: var(--white);
+      transition: background 0.2s, transform 0.2s;
     }
-    .expect-card:hover { background: rgba(255,255,255,0.08); }
-    .expect-card h3 { font-size: 22px; color: var(--lavender-light); margin-bottom: 12px; }
-    .expect-card p { font-size: 15px; color: rgba(241,239,255,0.85); line-height: 1.7; }
+    .expect-card:hover { background: var(--white); transform: translateY(-4px); }
+    .expect-card h3 { font-size: 22px; color: var(--plum); margin-bottom: 12px; }
+    .expect-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
     /* ── Who it's for ── */
     .who-section {

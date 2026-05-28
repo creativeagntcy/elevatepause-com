@@ -226,12 +226,12 @@
     /* ── Why Partner ── */
     .why-section {
       padding: 100px 40px;
-      background: var(--plum);
+      background: var(--lavender-light);
     }
-    .why-section .section-label { color: var(--lavender); }
+    .why-section .section-label { color: var(--plum); }
     .why-section h2 {
       font-size: clamp(32px, 4vw, 48px);
-      color: var(--white);
+      color: var(--plum);
       text-align: center;
       margin-bottom: 60px;
     }
@@ -244,23 +244,24 @@
     }
     .why-card {
       padding: 40px 32px;
-      border: 1px solid rgba(200,196,232,0.3);
+      border: 1px solid rgba(61,24,96,0.12);
       border-radius: 8px;
-      transition: background 0.2s ease;
+      background: var(--white);
+      transition: transform 0.2s ease;
     }
-    .why-card:hover { background: rgba(255,255,255,0.08); }
+    .why-card:hover { transform: translateY(-4px); }
     .why-card-icon {
       font-size: 30px;
       margin-bottom: 18px;
     }
     .why-card h3 {
       font-size: 22px;
-      color: var(--lavender-light);
+      color: var(--plum);
       margin-bottom: 12px;
     }
     .why-card p {
       font-size: 15px;
-      color: rgba(241,239,255,0.8);
+      color: var(--text-mid);
       line-height: 1.7;
     }
 
