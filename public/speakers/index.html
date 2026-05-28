@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menopause Experts &amp; Midlife Health Speakers | elevatePAUSE 2026</title>
   <meta name="description" content="Meet the physicians, menopause experts, and wellness advocates speaking at elevatePAUSE 2026, a midlife and longevity summit for women in Atlanta, Georgia." />
-  <meta property="og:title" content="Speakers | elevatePAUSE 2026 — Midlife &amp; Longevity Summit" />
+  <meta property="og:title" content="Speakers | elevatePAUSE 2026 - Midlife &amp; Longevity Summit" />
   <meta property="og:description" content="Clinicians, researchers, advocates, and authors. Experts in perimenopause, menopause, hormonal health, longevity, and whole-person wellness." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.elevatepause.com/speakers" />
@@ -78,18 +78,27 @@
     .speakers-section h2 { font-size: clamp(28px, 3.5vw, 40px); color: var(--plum); text-align: center; margin-bottom: 64px; }
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
     }
-    .speaker-card { text-align: center; }
+    .speaker-card {
+      text-align: center;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(61,24,96,0.08), 0 1px 3px rgba(61,24,96,0.06);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .speaker-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(61,24,96,0.14), 0 3px 8px rgba(61,24,96,0.08);
+    }
     .speaker-photo {
       width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: 8px;
+      aspect-ratio: 4/5;
       overflow: hidden;
-      margin-bottom: 16px;
       background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender) 100%);
       display: flex;
       align-items: flex-end;
@@ -107,10 +116,9 @@
       font-family: Georgia, serif; font-size: 36px; font-weight: 600;
       color: var(--plum-light);
     }
-    .speaker-name { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; color: var(--plum); margin-bottom: 4px; }
-    .speaker-title { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plum-light); margin-bottom: 8px; }
-    .speaker-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
-    .speaker-tag { font-size: 11px; color: var(--text-mid); background: var(--lavender-light); border-radius: 20px; padding: 3px 10px; }
+    .speaker-card-body { padding: 20px 20px 24px; }
+    .speaker-name { font-family: Georgia,'Times New Roman',serif; font-size: 17px; font-weight: 600; color: var(--plum); margin-bottom: 6px; }
+    .speaker-title { font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--plum-light); }
 
     /* ── Spotlight ── */
     .spotlight-section {
@@ -180,6 +188,7 @@
     .footer-nav a:hover { color: var(--white); }
 
     /* ── Responsive ── */
+    .section-divider { border: none; border-top: 1px solid var(--lavender); margin: 0; }
     @media (max-width: 900px) {
       .site-nav { padding: 0 24px; }
       .nav-links { display: none; }
@@ -193,8 +202,8 @@
       .spotlight-pillars { grid-template-columns: repeat(2, 1fr); }
       .speakers-section, .spotlight-section, .cta-section { padding: 72px 24px; }
     }
-    @media (max-width: 500px) {
-      .speakers-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 599px) {
+      .speakers-grid { grid-template-columns: 1fr; gap: 20px; }
     }
   </style>
 </head>
@@ -241,13 +250,9 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-jessica-shepherd.jpg" alt="Dr. Jessica Shepherd, OB-GYN and Menopause Expert" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. Jessica Shepherd</p>
-        <p class="speaker-title">OB-GYN | Menopause Expert</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Menopause</span>
-          <span class="speaker-tag">Hormones</span>
-          <span class="speaker-tag">Women's Health</span>
-          <span class="speaker-tag">Midlife</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. Jessica Shepherd</p>
+          <p class="speaker-title">OB-GYN | Menopause Expert</p>
         </div>
       </div>
 
@@ -255,13 +260,9 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-jill-senemar.jpg" alt="Dr. Jill Senemar, OB-GYN and Menopause Specialist" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. Jill Senemar</p>
-        <p class="speaker-title">OB-GYN | Menopause Specialist</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Menopause</span>
-          <span class="speaker-tag">HRT</span>
-          <span class="speaker-tag">Hormonal Balance</span>
-          <span class="speaker-tag">Midlife</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. Jill Senemar</p>
+          <p class="speaker-title">OB-GYN | Menopause Specialist</p>
         </div>
       </div>
 
@@ -269,13 +270,9 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-nicole-peoples.jpg" alt="Dr. Nicole Peoples, Functional Medicine Physician" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. Nicole Peoples</p>
-        <p class="speaker-title">Functional Medicine Physician</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Longevity</span>
-          <span class="speaker-tag">Metabolic Health</span>
-          <span class="speaker-tag">Nutrition</span>
-          <span class="speaker-tag">Hormones</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. Nicole Peoples</p>
+          <p class="speaker-title">Functional Medicine Physician</p>
         </div>
       </div>
 
@@ -283,13 +280,9 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-christine-nwoha.jpg" alt="Dr. Christine Nwoha, Lifestyle Medicine Physician" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. Christine Nwoha</p>
-        <p class="speaker-title">Lifestyle Medicine Physician</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Metabolic Health</span>
-          <span class="speaker-tag">Weight Management</span>
-          <span class="speaker-tag">Hormones</span>
-          <span class="speaker-tag">Preventive Medicine</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. Christine Nwoha</p>
+          <p class="speaker-title">Lifestyle Medicine Physician</p>
         </div>
       </div>
 
@@ -297,13 +290,9 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-ayana-herbert.jpg" alt="Dr. Ayana Herbert, Wellness Educator" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. Ayana Herbert</p>
-        <p class="speaker-title">Wellness Educator</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Practical Wellness</span>
-          <span class="speaker-tag">Women's Health</span>
-          <span class="speaker-tag">Mind-Body</span>
-          <span class="speaker-tag">Resilience</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. Ayana Herbert</p>
+          <p class="speaker-title">Wellness Educator</p>
         </div>
       </div>
 
@@ -312,18 +301,16 @@
         <div class="speaker-photo">
           <img src="/assets/speakers/dr-deretta-rhodes.jpg" alt="Dr. DeRetta Rhodes PhD, Chief People Officer and Women's Leadership Speaker" loading="lazy" />
         </div>
-        <p class="speaker-name">Dr. DeRetta Rhodes</p>
-        <p class="speaker-title">Chief People Officer | Women's Leadership</p>
-        <div class="speaker-tags">
-          <span class="speaker-tag">Executive Leadership</span>
-          <span class="speaker-tag">Women in Workplace</span>
-          <span class="speaker-tag">DEI</span>
-          <span class="speaker-tag">Midlife Career</span>
+        <div class="speaker-card-body">
+          <p class="speaker-name">Dr. DeRetta Rhodes</p>
+          <p class="speaker-title">Chief People Officer | Women's Leadership</p>
         </div>
       </div>
 
     </div>
   </section>
+
+  <hr class="section-divider" />
 
   <!-- PANELIST SPOTLIGHT -->
   <section class="spotlight-section fade-in">
@@ -341,7 +328,7 @@
           <span class="specialty-pill">Functional Medicine</span>
           <span class="specialty-pill">Sustainable Wellness</span>
         </div>
-        <p class="spotlight-bio">Dr. Shelia Payton bridges the gap between clinical expertise and everyday wellness — helping women create sustainable change from the inside out. Her work blends functional medicine, chiropractic care, and lifestyle strategy to address the root causes of imbalance and support vibrant living in midlife and beyond. Specialties include perimenopause, menopause, hormonal imbalance, chiropractic care, and functional wellness for women over 40.</p>
+        <p class="spotlight-bio">Dr. Shelia Payton bridges the gap between clinical expertise and everyday wellness, helping women create sustainable change from the inside out. Her work blends functional medicine, chiropractic care, and lifestyle strategy to address the root causes of imbalance and support vibrant living in midlife and beyond. Specialties include perimenopause, menopause, hormonal imbalance, chiropractic care, and functional wellness for women over 40.</p>
         <div class="spotlight-pillars">
           <div class="pillar-item"><div class="pillar-icon">🔍</div><p class="pillar-label">Root Cause</p></div>
           <div class="pillar-item"><div class="pillar-icon">⚡</div><p class="pillar-label">Whole-Body</p></div>
