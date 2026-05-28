@@ -114,7 +114,7 @@
       grid-template-columns: 55% 45%;
       align-items: center;
       padding: 100px 40px 80px;
-      background: linear-gradient(135deg, #3d1860 0%, #2a2661 50%, #735fcf 100%);
+      background: var(--lavender-light);
       position: relative;
       overflow: hidden;
     }
@@ -124,34 +124,34 @@
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
+      color: var(--plum);
       margin-bottom: 24px;
     }
     .hero h1 {
       font-size: clamp(40px, 5.5vw, 76px);
       font-weight: 600;
-      color: var(--white);
+      color: var(--plum);
       margin-bottom: 16px;
       line-height: 1.1;
       letter-spacing: -0.01em;
     }
     .hero h1 em {
       font-style: italic;
-      color: var(--cta-lime-glow);
+      color: var(--plum-light);
     }
     .hero-rule {
       width: 60px; height: 2px;
-      background: var(--cta-lime-glow);
+      background: var(--plum-light);
       margin: 20px 0 28px;
     }
     .hero-desc {
       font-size: clamp(16px, 1.8vw, 18px);
-      color: rgba(255,255,255,0.9);
+      color: var(--text-mid);
       max-width: 520px;
       margin-bottom: 32px;
       line-height: 1.7;
     }
-    .hero-desc strong { color: var(--white); }
+    .hero-desc strong { color: var(--plum); }
     .hero-meta {
       display: flex;
       align-items: center;
@@ -165,10 +165,10 @@
       gap: 8px;
       font-size: 14px;
       font-weight: 500;
-      color: rgba(255,255,255,0.85);
+      color: var(--text-mid);
     }
-    .hero-meta-item svg { width: 16px; height: 16px; stroke: var(--cta-lime-glow); fill: none; flex-shrink: 0; }
-    .hero-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.35); }
+    .hero-meta-item svg { width: 16px; height: 16px; stroke: var(--plum-light); fill: none; flex-shrink: 0; }
+    .hero-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(61,24,96,0.25); }
     .hero-ctas { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
     .hero-cta-primary {
       display: inline-flex; align-items: center; gap: 8px;
@@ -186,15 +186,15 @@
     .hero-cta-secondary {
       font-size: 14px;
       font-weight: 600;
-      color: rgba(255,255,255,0.8);
+      color: var(--plum);
       text-decoration: none;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
+      border-bottom: 1px solid rgba(61,24,96,0.4);
       padding-bottom: 2px;
       transition: color 0.2s, border-color 0.2s;
     }
-    .hero-cta-secondary:hover { color: var(--white); border-color: var(--white); }
+    .hero-cta-secondary:hover { color: var(--plum-light); border-color: var(--plum-light); }
     .hero-right {
       display: flex;
       align-items: center;
