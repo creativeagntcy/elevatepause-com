@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menopause, Hormones &amp; Midlife Health Articles | elevatePAUSE 2026</title>
+  <meta name="description" content="Expert-backed articles on perimenopause, menopause, hormone therapy, brain health, metabolic health, and longevity for women in midlife. Powered by elevatePAUSE." />
+  <meta property="og:title" content="Midlife Health Articles | elevatePAUSE 2026" />
+  <meta property="og:description" content="Answers for your midlife journey. Explore articles on menopause, hormones, healthy aging, and longevity — so you can feel informed, confident, and in control." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.elevatepause.com/blog" />
+  <link rel="canonical" href="https://www.elevatepause.com/blog" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --plum: #3d1860; --plum-light: #735fcf; --plum-dark: #2a2661;
+      --lavender: #c8c4e8; --lavender-light: #f1efff;
+      --text-dark: #3d1860; --text-mid: #2a2661;
+      --cream: #f1efff; --lime-cta: #84cf06; --lime-hover: #6aab05;
+      --cta-lime-glow: #dcf298; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 17px; color: var(--text-dark);
+      background: var(--cream); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; font-weight: 600; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(61,24,96,0.08);
+    }
+    .nav-brand { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; color: var(--plum); text-decoration: none; }
+    .nav-brand span { color: var(--plum-light); font-size: 13px; font-weight: 400; margin-left: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--plum-light); }
+    .nav-links a.active { color: var(--plum-light); border-bottom: 2px solid var(--plum-light); padding-bottom: 2px; }
+    .nav-cta { background: var(--lime-cta) !important; color: #000 !important; padding: 9px 18px !important; border-radius: 6px !important; font-size: 11px !important; }
+    .nav-cta:hover { background: var(--lime-hover) !important; }
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--plum); border-radius: 2px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #3d1860 0%, #2a2661 50%, #735fcf 100%);
+      padding: 160px 40px 100px;
+      text-align: center;
+    }
+    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(36px, 5vw, 64px); color: var(--white); margin-bottom: 20px; line-height: 1.1; }
+    .hero-rule { width: 60px; height: 2px; background: var(--cta-lime-glow); margin: 0 auto 28px; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.88); max-width: 600px; margin: 0 auto; line-height: 1.65; }
+
+    /* ── Articles ── */
+    .articles-section {
+      padding: 100px 40px;
+      background: var(--white);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .article-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(61,24,96,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,24,96,0.1); }
+    .article-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--lavender-light), var(--lavender));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .article-img img { width: 100%; height: 100%; object-fit: cover; }
+    .article-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--plum-light); font-size: 32px;
+    }
+    .article-body { padding: 24px; }
+    .article-category {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--plum-light);
+      margin-bottom: 10px;
+    }
+    .article-card h3 {
+      font-size: 19px;
+      color: var(--plum);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .article-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+    .article-link {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--plum-light);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .article-link:hover { color: var(--plum); }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 40px;
+      background: var(--lavender-light);
+      text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(28px, 4vw, 44px); color: var(--plum); margin-bottom: 16px; }
+    .cta-section p { font-size: 18px; color: var(--text-mid); max-width: 520px; margin: 0 auto 40px; line-height: 1.65; }
+    .cta-btn {
+      display: inline-block; background: var(--plum); color: var(--white);
+      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 16px 40px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn:hover { background: var(--plum-light); transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    footer { background: var(--plum-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 48px 24px; font-size: 13px; }
+    .footer-brand { font-family: Georgia,'Times New Roman',serif; font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+    .footer-nav { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-nav a { color: var(--lavender); text-decoration: none; font-size: 12px; }
+    .footer-nav a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .site-nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--white); padding: 16px 24px 24px; border-bottom: 1px solid rgba(61,24,96,0.1); gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 120px 24px 80px; }
+      .articles-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .articles-section, .cta-section { padding: 72px 24px; }
+    }
+    @media (max-width: 600px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">elevatePAUSE™ <span>2026</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/agenda">Agenda</a>
+      <a href="/speakers">Speakers</a>
+      <a href="/sponsorship">Sponsors</a>
+      <a href="/#faqs">FAQs</a>
+      <a href="/#waitlist" class="nav-cta">Join the Waitlist</a>
+    </div>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero fade-in">
+    <p class="hero-eyebrow">Education. Insight. Empowerment.</p>
+    <h1>Answers for Your Midlife Journey.</h1>
+    <div class="hero-rule"></div>
+    <p>Explore expert-backed articles on menopause, hormones, healthy aging, and longevity — so you can feel informed, confident, and in control of your health.</p>
+  </section>
+
+  <!-- ARTICLES -->
+  <section class="articles-section fade-in">
+    <div class="articles-grid">
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: Perimenopause article image -->
+          <div class="article-img-placeholder">🌿</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Menopause 101</p>
+          <h3>What Is Perimenopause? A Complete Guide</h3>
+          <p>Understand the stages, symptoms, hormonal shifts, and what to expect — so you're never caught off guard.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: HRT article image -->
+          <div class="article-img-placeholder">💊</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Hormone Health</p>
+          <h3>Hormone Therapy (HRT): What Women Should Know</h3>
+          <p>Evidence-based answers to the most common questions about hormone replacement therapy in midlife.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: Longevity article image -->
+          <div class="article-img-placeholder">⏳</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Longevity</p>
+          <h3>Longevity Strategies for Women Over 40</h3>
+          <p>Build habits today for a healthier, longer tomorrow. What the science says about women's longevity and healthy aging.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: Brain health article image -->
+          <div class="article-img-placeholder">🧠</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Brain Health</p>
+          <h3>Menopause and Brain Health</h3>
+          <p>How hormones impact memory, focus, mood, and cognitive function — and what you can do to protect your brain.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: Metabolic health article image -->
+          <div class="article-img-placeholder">🔥</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Metabolic Health</p>
+          <h3>Midlife Metabolism Explained</h3>
+          <p>Why your body changes in perimenopause and menopause — and what you can do about weight, energy, and metabolic health.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-img">
+          <!-- PLACEHOLDER: Sleep article image -->
+          <div class="article-img-placeholder">🌙</div>
+        </div>
+        <div class="article-body">
+          <p class="article-category">Sleep &amp; Stress</p>
+          <h3>Sleep, Stress &amp; Midlife</h3>
+          <p>Better sleep and stress management strategies for hormonal balance. What works — and why it matters more than you think.</p>
+          <a href="#" class="article-link">Read more &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-in">
+    <h2>More than articles. A community.</h2>
+    <p>Join the elevatePAUSE waitlist for event updates, speaker announcements, and early access to tickets.</p>
+    <a href="/#waitlist" class="cta-btn">Join the Waitlist &rarr;</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-brand">elevatePAUSE™ 2026 &nbsp;|&nbsp; A shiftHER™ Experience</p>
+    <nav class="footer-nav">
+      <a href="/">Home</a>
+      <a href="/speakers">Speakers</a>
+      <a href="/agenda">Agenda</a>
+      <a href="/blog">Articles</a>
+      <a href="/sponsorship">Sponsors</a>
+      <a href="/#faqs">FAQs</a>
+    </nav>
+    <p>&copy; 2026 shiftHER Inc. All rights reserved. &nbsp;|&nbsp; Atlanta, GA</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

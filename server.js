@@ -42,6 +42,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/health', (req, res) => res.json({ status: 'ok', site: 'elevatepause', ts: new Date().toISOString() }));
 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
+app.get('/speakers', (req, res) => res.sendFile(path.join(__dirname, 'public', 'speakers', 'index.html')));
+app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html')));
+app.get('/agenda', (req, res) => res.sendFile(path.join(__dirname, 'public', 'agenda', 'index.html')));
 
 // Sponsorship login page
 app.get('/sponsorship/enter', (req, res) => {

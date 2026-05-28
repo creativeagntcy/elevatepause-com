@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menopause Experts &amp; Midlife Health Speakers | elevatePAUSE 2026</title>
+  <meta name="description" content="Meet the physicians, menopause experts, and wellness advocates speaking at elevatePAUSE 2026, a midlife and longevity summit for women in Atlanta, Georgia." />
+  <meta property="og:title" content="Speakers | elevatePAUSE 2026 — Midlife &amp; Longevity Summit" />
+  <meta property="og:description" content="Clinicians, researchers, advocates, and authors. Experts in perimenopause, menopause, hormonal health, longevity, and whole-person wellness." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.elevatepause.com/speakers" />
+  <link rel="canonical" href="https://www.elevatepause.com/speakers" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --plum: #3d1860; --plum-light: #735fcf; --plum-dark: #2a2661;
+      --lavender: #c8c4e8; --lavender-light: #f1efff;
+      --text-dark: #3d1860; --text-mid: #2a2661;
+      --cream: #f1efff; --lime-cta: #84cf06; --lime-hover: #6aab05;
+      --cta-lime-glow: #dcf298; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 17px; color: var(--text-dark);
+      background: var(--cream); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; font-weight: 600; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(61,24,96,0.08);
+    }
+    .nav-brand { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; color: var(--plum); text-decoration: none; }
+    .nav-brand span { color: var(--plum-light); font-size: 13px; font-weight: 400; margin-left: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--plum-light); }
+    .nav-links a.active { color: var(--plum-light); border-bottom: 2px solid var(--plum-light); padding-bottom: 2px; }
+    .nav-cta { background: var(--lime-cta) !important; color: #000 !important; padding: 9px 18px !important; border-radius: 6px !important; font-size: 11px !important; }
+    .nav-cta:hover { background: var(--lime-hover) !important; }
+    .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--plum); border-radius: 2px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, #3d1860 0%, #2a2661 50%, #735fcf 100%);
+      padding: 140px 40px 100px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-left { }
+    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(38px, 5vw, 64px); color: var(--white); margin-bottom: 24px; line-height: 1.1; }
+    .hero-rule { width: 60px; height: 2px; background: var(--cta-lime-glow); margin: 0 0 28px; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.88); line-height: 1.65; margin-bottom: 32px; max-width: 480px; }
+    .hero-link { color: var(--cta-lime-glow); text-decoration: none; font-weight: 600; font-size: 15px; border-bottom: 1px solid rgba(220,242,152,0.4); padding-bottom: 2px; transition: border-color 0.2s; }
+    .hero-link:hover { border-color: var(--cta-lime-glow); }
+    .hero-right { display: flex; justify-content: center; }
+    .hero-img-wrap { width: 100%; max-width: 380px; aspect-ratio: 4/5; border-radius: 0 100px 100px 0; overflow: hidden; }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    /* ── Speaker grid ── */
+    .speakers-section {
+      padding: 100px 40px;
+      background: var(--white);
+    }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--plum); text-align: center; margin-bottom: 16px; opacity: 0.75; }
+    .speakers-section h2 { font-size: clamp(28px, 3.5vw, 40px); color: var(--plum); text-align: center; margin-bottom: 64px; }
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .speaker-card { text-align: center; }
+    .speaker-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+    .speaker-photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      display: block;
+    }
+    .speaker-photo-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(160deg, var(--lavender-light), var(--lavender));
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 36px; font-weight: 600;
+      color: var(--plum-light);
+    }
+    .speaker-name { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; color: var(--plum); margin-bottom: 4px; }
+    .speaker-title { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plum-light); margin-bottom: 8px; }
+    .speaker-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
+    .speaker-tag { font-size: 11px; color: var(--text-mid); background: var(--lavender-light); border-radius: 20px; padding: 3px 10px; }
+
+    /* ── Spotlight ── */
+    .spotlight-section {
+      padding: 100px 40px;
+      background: var(--lavender-light);
+    }
+    .spotlight-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .spotlight-photo {
+      aspect-ratio: 3/4;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--lavender), var(--plum-light));
+    }
+    .spotlight-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .spotlight-photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 52px; color: var(--white);
+    }
+    .spotlight-label { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--plum-light); margin-bottom: 12px; }
+    .spotlight-name { font-size: clamp(30px, 3.5vw, 46px); color: var(--plum); margin-bottom: 8px; }
+    .spotlight-credential { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plum-light); margin-bottom: 24px; }
+    .spotlight-specialties { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .specialty-pill {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--plum); background: var(--white); border: 1px solid var(--lavender);
+      border-radius: 4px; padding: 6px 14px;
+    }
+    .spotlight-bio { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 32px; }
+    .spotlight-pillars {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px;
+    }
+    .pillar-item { text-align: center; }
+    .pillar-icon { font-size: 24px; margin-bottom: 6px; }
+    .pillar-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plum); }
+    .spotlight-link { color: var(--plum-light); font-weight: 600; text-decoration: none; font-size: 15px; border-bottom: 1px solid var(--lavender); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+    .spotlight-link:hover { color: var(--plum); border-color: var(--plum); }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 100px 40px;
+      background: var(--plum);
+      text-align: center;
+    }
+    .cta-section h2 { font-size: clamp(30px, 4vw, 48px); color: var(--white); margin-bottom: 16px; }
+    .cta-section p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+    .cta-btn {
+      display: inline-block; background: var(--lime-cta); color: #000;
+      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 16px 40px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn:hover { background: var(--lime-hover); transform: translateY(-2px); }
+
+    /* ── Footer ── */
+    footer { background: var(--plum-dark); color: rgba(255,255,255,0.6); text-align: center; padding: 48px 24px; font-size: 13px; }
+    .footer-brand { font-family: Georgia,'Times New Roman',serif; font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+    .footer-nav { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-nav a { color: var(--lavender); text-decoration: none; font-size: 12px; }
+    .footer-nav a:hover { color: var(--white); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .site-nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--white); padding: 16px 24px 24px; border-bottom: 1px solid rgba(61,24,96,0.1); gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+      .nav-hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+      .hero-right { display: none; }
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .spotlight-inner { grid-template-columns: 1fr; }
+      .spotlight-photo { max-width: 280px; margin: 0 auto; }
+      .spotlight-pillars { grid-template-columns: repeat(2, 1fr); }
+      .speakers-section, .spotlight-section, .cta-section { padding: 72px 24px; }
+    }
+    @media (max-width: 500px) {
+      .speakers-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <a href="/" class="nav-brand">elevatePAUSE™ <span>2026</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="/#about">About</a>
+      <a href="/#experience">Experience</a>
+      <a href="/agenda">Agenda</a>
+      <a href="/speakers" class="active">Speakers</a>
+      <a href="/sponsorship">Sponsors</a>
+      <a href="/#faqs">FAQs</a>
+      <a href="/#waitlist" class="nav-cta">Join the Waitlist</a>
+    </div>
+    <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left fade-in">
+      <p class="hero-eyebrow">Meet the Voices</p>
+      <h1>Shaping the Midlife Conversation.</h1>
+      <div class="hero-rule"></div>
+      <p>Clinicians, Researchers, Advocates, Authors. Experts in women's health, perimenopause, menopause, longevity, and whole-person wellness.</p>
+      <a href="/#waitlist" class="hero-link">Join the waitlist for speaker announcements &rarr;</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-wrap">
+        <!-- PLACEHOLDER: Replace with speakers group photo -->
+        <div style="width:100%;height:100%;background:linear-gradient(160deg,rgba(115,95,207,0.4),rgba(61,24,96,0.6));display:flex;align-items:center;justify-content:center;">
+          <span style="color:rgba(255,255,255,0.4);font-size:14px;font-family:Georgia,serif;">Speaker Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKERS GRID -->
+  <section class="speakers-section fade-in">
+    <p class="section-label">Featured Speakers</p>
+    <h2>Experts in Women's Health &amp; Midlife Wellness</h2>
+    <div class="speakers-grid">
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <!-- PLACEHOLDER: Dr. Jessica Shepherd headshot -->
+          <div class="speaker-photo-placeholder">JS</div>
+        </div>
+        <p class="speaker-name">Dr. Jessica Shepherd</p>
+        <p class="speaker-title">OB-GYN | Menopause Expert</p>
+        <div class="speaker-tags">
+          <span class="speaker-tag">Menopause</span>
+          <span class="speaker-tag">Hormones</span>
+          <span class="speaker-tag">Women's Health</span>
+          <span class="speaker-tag">Midlife</span>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <!-- PLACEHOLDER: Dr. Jill Senemar headshot -->
+          <div class="speaker-photo-placeholder">JS</div>
+        </div>
+        <p class="speaker-name">Dr. Jill Senemar</p>
+        <p class="speaker-title">OB-GYN | Menopause Specialist</p>
+        <div class="speaker-tags">
+          <span class="speaker-tag">Menopause</span>
+          <span class="speaker-tag">HRT</span>
+          <span class="speaker-tag">Hormonal Balance</span>
+          <span class="speaker-tag">Midlife</span>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <!-- PLACEHOLDER: Dr. Nicole Peoples headshot -->
+          <div class="speaker-photo-placeholder">NP</div>
+        </div>
+        <p class="speaker-name">Dr. Nicole Peoples</p>
+        <p class="speaker-title">Functional Medicine Physician</p>
+        <div class="speaker-tags">
+          <span class="speaker-tag">Longevity</span>
+          <span class="speaker-tag">Metabolic Health</span>
+          <span class="speaker-tag">Nutrition</span>
+          <span class="speaker-tag">Hormones</span>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <!-- PLACEHOLDER: Dr. Christine Nwoha headshot -->
+          <div class="speaker-photo-placeholder">CN</div>
+        </div>
+        <p class="speaker-name">Dr. Christine Nwoha</p>
+        <p class="speaker-title">Lifestyle Medicine Physician</p>
+        <div class="speaker-tags">
+          <span class="speaker-tag">Metabolic Health</span>
+          <span class="speaker-tag">Weight Management</span>
+          <span class="speaker-tag">Hormones</span>
+          <span class="speaker-tag">Preventive Medicine</span>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <div class="speaker-photo">
+          <!-- PLACEHOLDER: Dr. Ayana Herbert headshot -->
+          <div class="speaker-photo-placeholder">AH</div>
+        </div>
+        <p class="speaker-name">Dr. Ayana Herbert</p>
+        <p class="speaker-title">Wellness Educator</p>
+        <div class="speaker-tags">
+          <span class="speaker-tag">Practical Wellness</span>
+          <span class="speaker-tag">Women's Health</span>
+          <span class="speaker-tag">Mind-Body</span>
+          <span class="speaker-tag">Resilience</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PANELIST SPOTLIGHT -->
+  <section class="spotlight-section fade-in">
+    <div class="spotlight-inner">
+      <div class="spotlight-photo">
+        <!-- PLACEHOLDER: Dr. Shelia Payton photo -->
+        <div class="spotlight-photo-placeholder">SP</div>
+      </div>
+      <div>
+        <p class="spotlight-label">Panelist Spotlight</p>
+        <h2 class="spotlight-name">Dr. Shelia Payton</h2>
+        <p class="spotlight-credential">Board-Certified Chiropractor &amp; Functional Medicine Clinician &nbsp;|&nbsp; Functional Medicine Specialist · Chiropractic Care Expert</p>
+        <div class="spotlight-specialties">
+          <span class="specialty-pill">Root Cause Focus</span>
+          <span class="specialty-pill">Whole-Body Alignment</span>
+          <span class="specialty-pill">Functional Medicine</span>
+          <span class="specialty-pill">Sustainable Wellness</span>
+        </div>
+        <p class="spotlight-bio">Dr. Shelia Payton bridges the gap between clinical expertise and everyday wellness — helping women create sustainable change from the inside out. Her work blends functional medicine, chiropractic care, and lifestyle strategy to address the root causes of imbalance and support vibrant living in midlife and beyond. Specialties include perimenopause, menopause, hormonal imbalance, chiropractic care, and functional wellness for women over 40.</p>
+        <div class="spotlight-pillars">
+          <div class="pillar-item"><div class="pillar-icon">🔍</div><p class="pillar-label">Root Cause</p></div>
+          <div class="pillar-item"><div class="pillar-icon">⚡</div><p class="pillar-label">Whole-Body</p></div>
+          <div class="pillar-item"><div class="pillar-icon">🌿</div><p class="pillar-label">Functional</p></div>
+          <div class="pillar-item"><div class="pillar-icon">✦</div><p class="pillar-label">Sustainable</p></div>
+        </div>
+        <a href="/agenda" class="spotlight-link">View Dr. Payton's session &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section fade-in">
+    <h2>Don't Miss a Speaker Announcement</h2>
+    <p>Join the waitlist and be the first to know when we announce new speakers, sessions, and tickets.</p>
+    <a href="/#waitlist" class="cta-btn">Join the Waitlist &rarr;</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-brand">elevatePAUSE™ 2026 &nbsp;|&nbsp; A shiftHER™ Experience</p>
+    <nav class="footer-nav">
+      <a href="/">Home</a>
+      <a href="/speakers">Speakers</a>
+      <a href="/agenda">Agenda</a>
+      <a href="/blog">Articles</a>
+      <a href="/sponsorship">Sponsors</a>
+      <a href="/#faqs">FAQs</a>
+    </nav>
+    <p>&copy; 2026 shiftHER Inc. All rights reserved. &nbsp;|&nbsp; Atlanta, GA</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
