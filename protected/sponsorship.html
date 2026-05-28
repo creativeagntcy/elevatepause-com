@@ -55,17 +55,22 @@
     /* ── Brand Mark ── */
     .header-brand {
       position: fixed;
-      top: 32px;
-      left: 32px;
-      z-index: 100;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      height: 64px;
+      background: var(--plum-dark);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 18px;
       font-weight: 600;
       letter-spacing: 0.01em;
       text-decoration: none;
     }
-    .header-brand-elevate { color: var(--text-dark); }
-    .header-brand-pause   { color: var(--plum); }
+    .header-brand-elevate { color: var(--white); }
+    .header-brand-pause   { color: var(--lavender); }
 
     /* ── Hero ── */
     .hero {
