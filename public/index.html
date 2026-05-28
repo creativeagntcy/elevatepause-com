@@ -66,20 +66,20 @@
       justify-content: space-between;
       padding: 0 40px;
       height: 64px;
-      background: rgba(255,255,255,0.97);
+      background: var(--plum-dark);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(61,24,96,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .nav-brand {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 16px;
       font-weight: 600;
-      color: var(--plum);
+      color: var(--white);
       text-decoration: none;
       letter-spacing: 0.01em;
       white-space: nowrap;
     }
-    .nav-brand span { color: var(--plum-light); font-size: 13px; font-weight: 400; margin-left: 3px; }
+    .nav-brand span { color: var(--lavender); font-size: 13px; font-weight: 400; margin-left: 3px; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -90,11 +90,11 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-mid);
+      color: rgba(255,255,255,0.85);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--plum-light); }
+    .nav-links a:hover { color: var(--white); }
     .nav-cta {
       background: var(--lime-cta) !important;
       color: #000 !important;
@@ -105,7 +105,7 @@
     }
     .nav-cta:hover { background: var(--lime-hover) !important; }
     .nav-hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--plum); border-radius: 2px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
 
     /* ── Hero ── */
     .hero {
@@ -516,9 +516,9 @@
         flex-direction: column;
         position: absolute;
         top: 64px; left: 0; right: 0;
-        background: var(--white);
+        background: var(--plum-dark);
         padding: 16px 24px 24px;
-        border-bottom: 1px solid rgba(61,24,96,0.1);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
         gap: 16px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       }
