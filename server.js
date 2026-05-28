@@ -96,15 +96,26 @@ app.post('/sponsorship/enter', express.urlencoded({ extended: false }), (req, re
   const submitted = (req.body.password || '').trim().toUpperCase();
   if (submitted === SPONSOR_PASSWORD) {
     res.setHeader('Set-Cookie', `${COOKIE_NAME}=${makeToken(SPONSOR_PASSWORD)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`);
-    return res.redirect('/sponsorship');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    return res.redirect(302, '/sponsorship');
   }
-  res.redirect('/sponsorship/enter?error=1');
+  res.redirect(302, '/sponsorship/enter?error=1');
 });
 
 // Protected sponsorship page
 app.get('/sponsorship', (req, res) => {
-  if (!hasAccess(req)) return res.redirect('/sponsorship/enter');
+  if (!hasAccess(req)) {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+    return res.redirect(302, '/sponsorship/enter');
+  }
+  res.setHeader('Cache-Control', 'no-store, private');
   res.sendFile(path.join(__dirname, 'protected', 'sponsorship.html'));
+});
+
+// Sponsorship login — also no-cache
+app.use('/sponsorship', (req, res, next) => {
+  res.setHeader('Cache-Control', 'no-store, private');
+  next();
 });
 
 app.listen(PORT, () => console.log(`elevatePAUSE running on port ${PORT}`));
