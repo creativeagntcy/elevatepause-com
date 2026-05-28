@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sponsorship Opportunities — elevatePAUSE™</title>
   <meta name="description" content="Partner with elevatePAUSE™ — a curated wellness experience for women navigating midlife in Atlanta. Explore sponsorship opportunities for 2026." />
-  <meta property="og:title" content="Sponsorship — elevatePAUSE™" />
-  <meta property="og:description" content="Reach informed, engaged women at the intersection of wellness, longevity, and community. Sponsorship opportunities for elevatePAUSE™ 2026." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.elevatepause.com/sponsorship" />
-  <link rel="canonical" href="https://www.elevatepause.com/sponsorship" />
+  <meta name="robots" content="noindex, nofollow" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -19,7 +15,6 @@
       --plum-dark:      #2a2661;
       --lavender:       #c8c4e8;
       --lavender-light: #f1efff;
-      --purple-light:   #a08ce0;
       --text-dark:      #3d1860;
       --text-mid:       #2a2661;
       --cream:          #f1efff;
@@ -46,7 +41,18 @@
       font-weight: 600;
     }
 
-    /* ── Header ── */
+    /* ── Fade-in ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Brand Mark ── */
     .header-brand {
       position: fixed;
       top: 32px;
@@ -59,79 +65,137 @@
       text-decoration: none;
     }
     .header-brand-elevate { color: var(--text-dark); }
-    .header-brand-pause   { color: var(--plum-light); }
+    .header-brand-pause   { color: var(--plum); }
 
     /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum) 40%, var(--plum-light) 100%);
+      background: linear-gradient(135deg, #3d1860 0%, #2a2661 50%, #735fcf 100%);
       color: var(--white);
-      padding: 140px 24px 80px;
+      padding: 160px 40px 100px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .hero-eyebrow {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--cta-lime-glow);
-      margin-bottom: 20px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 24px;
     }
     .hero h1 {
-      font-size: clamp(36px, 5vw, 68px);
+      font-size: clamp(40px, 6vw, 72px);
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hero-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--cta-lime-glow);
+      margin: 20px auto 28px;
     }
     .hero p {
-      font-size: 20px;
-      color: rgba(255,255,255,0.85);
-      max-width: 640px;
-      margin: 0 auto 36px;
+      font-size: clamp(17px, 2vw, 20px);
+      color: rgba(255,255,255,0.9);
+      max-width: 580px;
+      margin: 0 auto 44px;
+      line-height: 1.65;
     }
-    .cta-btn {
+    .hero-cta {
       display: inline-block;
       background: var(--lime-cta);
-      color: var(--plum-dark);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 14px 32px;
-      border-radius: 4px;
+      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 16px 40px;
+      border-radius: 6px;
       text-decoration: none;
-      transition: background 0.2s ease, box-shadow 0.2s ease;
+      transition: background 0.2s ease, transform 0.15s ease;
     }
-    .cta-btn:hover {
+    .hero-cta:hover {
       background: var(--lime-hover);
-      box-shadow: 0 0 24px var(--cta-lime-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--plum);
+      text-align: center;
+      margin-bottom: 16px;
+      opacity: 0.75;
+    }
+
+    /* ── Stats row (audience snapshot) ── */
+    .stats-section {
+      padding: 100px 40px;
+      background: var(--lavender-light);
+    }
+    .stats-section h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      color: var(--plum);
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 40px 28px;
+      border-top: 3px solid var(--lavender);
+    }
+    .stat-number {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 52px;
+      font-weight: 600;
+      color: var(--plum-light);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .stat-card p {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.55;
     }
 
     /* ── Deck section ── */
     .deck-section {
-      max-width: 1100px;
-      margin: 72px auto;
-      padding: 0 24px;
+      padding: 100px 40px;
+      background: var(--cream);
     }
     .deck-section h2 {
-      font-size: clamp(26px, 3vw, 40px);
+      font-size: clamp(28px, 3.5vw, 44px);
       color: var(--plum);
-      margin-bottom: 12px;
       text-align: center;
+      margin-bottom: 12px;
     }
     .deck-subtitle {
       text-align: center;
       color: var(--text-mid);
       font-size: 18px;
-      margin-bottom: 48px;
+      margin-bottom: 52px;
+      line-height: 1.6;
     }
     .deck-embed-wrap {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 */
-      border-radius: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 56.25%;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 48px rgba(61,24,96,0.18);
+      box-shadow: 0 4px 40px rgba(61,24,96,0.14);
       background: var(--plum-dark);
     }
     .deck-embed-wrap iframe {
@@ -154,62 +218,82 @@
     }
     .deck-fallback a:hover { text-decoration: underline; }
 
-    /* ── Why partner ── */
+    /* ── Why Partner ── */
     .why-section {
-      background: var(--white);
-      padding: 72px 24px;
+      padding: 100px 40px;
+      background: var(--plum);
     }
-    .why-inner {
-      max-width: 960px;
-      margin: 0 auto;
+    .why-section .section-label { color: var(--lavender); }
+    .why-section h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--white);
       text-align: center;
-    }
-    .why-inner h2 {
-      font-size: clamp(24px, 3vw, 36px);
-      color: var(--plum);
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .why-card {
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 32px 24px;
-      text-align: left;
+      padding: 40px 32px;
+      border: 1px solid rgba(200,196,232,0.3);
+      border-radius: 8px;
+      transition: background 0.2s ease;
     }
+    .why-card:hover { background: rgba(255,255,255,0.08); }
     .why-card-icon {
-      font-size: 32px;
-      margin-bottom: 14px;
+      font-size: 30px;
+      margin-bottom: 18px;
     }
     .why-card h3 {
-      font-size: 18px;
-      color: var(--plum);
-      margin-bottom: 10px;
+      font-size: 22px;
+      color: var(--lavender-light);
+      margin-bottom: 12px;
     }
     .why-card p {
       font-size: 15px;
-      color: var(--text-mid);
+      color: rgba(241,239,255,0.8);
+      line-height: 1.7;
     }
 
-    /* ── CTA bottom ── */
+    /* ── CTA section ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--plum-dark) 0%, var(--plum-light) 100%);
-      padding: 72px 24px;
+      padding: 100px 40px;
+      background: var(--cream);
       text-align: center;
-      color: var(--white);
     }
     .cta-section h2 {
-      font-size: clamp(28px, 3.5vw, 46px);
-      color: var(--white);
+      font-size: clamp(32px, 4vw, 52px);
+      color: var(--plum);
       margin-bottom: 16px;
     }
     .cta-section p {
       font-size: 18px;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 36px;
+      color: var(--text-mid);
+      margin-bottom: 44px;
+      line-height: 1.65;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn-dark {
+      display: inline-block;
+      background: var(--plum);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 16px 40px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .cta-btn-dark:hover {
+      background: var(--plum-light);
+      transform: translateY(-2px);
     }
 
     /* ── Footer ── */
@@ -217,18 +301,29 @@
       background: var(--plum-dark);
       color: rgba(255,255,255,0.6);
       text-align: center;
-      padding: 32px 24px;
+      padding: 40px 24px;
       font-size: 13px;
     }
+    .footer-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 8px;
+    }
+    .footer-copy { margin-bottom: 8px; }
     footer a {
       color: var(--lavender);
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
       .header-brand { font-size: 15px; top: 20px; left: 16px; }
-      .deck-section { margin: 40px auto; }
-      .why-section { padding: 48px 16px; }
+      .hero { padding: 120px 24px 80px; }
+      .stats-grid { grid-template-columns: 1fr; gap: 0; }
+      .stat-card { border-top: none; border-bottom: 1px solid var(--lavender); padding: 32px 16px; }
+      .why-grid { grid-template-columns: 1fr; gap: 24px; }
+      .stats-section, .deck-section, .why-section, .cta-section { padding: 72px 24px; }
     }
   </style>
 </head>
@@ -236,21 +331,43 @@
 
   <!-- Brand mark -->
   <a href="https://www.elevatepause.com" class="header-brand">
-    <span class="header-brand-elevate">elevate</span><span class="header-brand-pause">PAUSE</span><span class="header-brand-elevate">™</span>
+    <span class="header-brand-elevate">elevate</span><span class="header-brand-pause">PAUSE™</span>
   </a>
 
   <!-- Hero -->
   <section class="hero">
-    <p class="hero-eyebrow">Sponsorship Opportunities · Atlanta · 2026</p>
+    <p class="hero-eyebrow">A shiftHER™ Experience · Atlanta · October 2026</p>
     <h1>Partner with elevatePAUSE™</h1>
-    <p>Reach informed, engaged women navigating midlife — at the intersection of wellness, longevity, and community.</p>
-    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="cta-btn">Get in Touch</a>
+    <div class="hero-rule" aria-hidden="true"></div>
+    <p>Reach informed, engaged women navigating midlife — at the intersection of wellness, longevity, and community. Limited sponsorship packages available.</p>
+    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Start the Conversation</a>
+  </section>
+
+  <!-- Audience snapshot -->
+  <section class="stats-section fade-in">
+    <p class="section-label">The Audience</p>
+    <h2>Who's in the Room</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">40–60</div>
+        <p>Women in perimenopause and menopause — actively seeking solutions, not scrolling passively.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">ATL</div>
+        <p>Rooted in Atlanta's wellness and professional community, with regional and national reach.</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">HVI</div>
+        <p>High-value, high-intent attendees making real decisions about their health, finances, and lifestyle.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Sponsorship Deck -->
-  <section class="deck-section">
-    <h2>Sponsorship Deck</h2>
-    <p class="deck-subtitle">View our full partnership opportunities, audience profile, and tiered packages below.</p>
+  <section class="deck-section fade-in">
+    <p class="section-label">Partnership Deck</p>
+    <h2>Sponsorship Opportunities</h2>
+    <p class="deck-subtitle">View our full partnership tiers, audience profile, and activation options below.</p>
     <div class="deck-embed-wrap">
       <iframe
         src="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view?embed"
@@ -261,51 +378,74 @@
       ></iframe>
     </div>
     <p class="deck-fallback">
-      Prefer to open directly?
-      <a href="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view?utm_content=DAHIqq45RxM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7a0f3f37c1#13" target="_blank" rel="noopener">View the full deck &rarr;</a>
+      Prefer to open directly? <a href="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view" target="_blank" rel="noopener">View full deck &rarr;</a>
     </p>
   </section>
 
   <!-- Why Partner -->
-  <section class="why-section">
-    <div class="why-inner">
-      <h2>Why elevatePAUSE™?</h2>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-card-icon">🎯</div>
-          <h3>High-Intent Audience</h3>
-          <p>Women aged 40–60 actively seeking wellness solutions, products, and services — not passive scrollers.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">🤝</div>
-          <h3>Community Trust</h3>
-          <p>Rooted in Atlanta's wellness community with curated, expert-led programming that earns loyalty.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">✨</div>
-          <h3>Premium Experience</h3>
-          <p>Thoughtful, elevated production — your brand is associated with quality, not noise.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-card-icon">📣</div>
-          <h3>Multi-Channel Reach</h3>
-          <p>In-person event, digital presence, and community touchpoints across the full experience arc.</p>
-        </div>
+  <section class="why-section fade-in">
+    <p class="section-label">Why elevatePAUSE™</p>
+    <h2>What Partners Get</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">🎯</div>
+        <h3>High-Intent Audience</h3>
+        <p>Women aged 40–60 actively seeking wellness solutions, products, and services. Not passive scrollers — people ready to act.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🤝</div>
+        <h3>Community Trust</h3>
+        <p>Built on Atlanta's wellness community with curated, expert-led programming that earns loyalty and drives word of mouth.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">✦</div>
+        <h3>Premium Experience</h3>
+        <p>Thoughtful, elevated production quality. Your brand is associated with excellence — not noise, not clutter.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">📣</div>
+        <h3>Multi-Channel Reach</h3>
+        <p>In-person event, digital presence, email, and community touchpoints across the full experience arc.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🔬</div>
+        <h3>Expert-Led Credibility</h3>
+        <p>Content anchored by board-certified physicians and specialists. Your brand earns trust by association.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">⚡</div>
+        <h3>Limited Availability</h3>
+        <p>Sponsorship packages are intentionally capped to protect sponsor visibility and attendee experience.</p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section fade-in">
+    <p class="section-label">Get Started</p>
     <h2>Ready to Partner?</h2>
-    <p>Limited sponsorship packages available for our 2026 launch. Let's talk.</p>
-    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="cta-btn">Start the Conversation</a>
+    <p>Limited packages available for our 2026 launch. Reach out to discuss which tier fits your goals.</p>
+    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="cta-btn-dark">Start the Conversation</a>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 elevatePAUSE™ — A <a href="https://www.intentionalmomentum.co" target="_blank" rel="noopener">Intentional Momentum</a> Experience &nbsp;|&nbsp; <a href="https://www.elevatepause.com">Home</a></p>
+    <p class="footer-brand">elevatePAUSE™ | A shiftHER™ Experience</p>
+    <p class="footer-copy">&copy; 2026 shiftHER Inc. All rights reserved.</p>
+    <p><a href="https://www.elevatepause.com">elevatepause.com</a></p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
