@@ -563,7 +563,7 @@
       <a href="/speakers">Speakers</a>
       <a href="/sponsorship">Sponsors</a>
       <a href="/#faqs">FAQs</a>
-      <a href="#waitlist" class="nav-cta">Join the Waitlist</a>
+      <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="nav-cta">Join the Waitlist</a>
     </div>
     <div class="nav-hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -594,7 +594,7 @@
         </div>
       </div>
       <div class="hero-ctas">
-        <a href="#waitlist" class="hero-cta-primary"><!--VTL:hero-cta-primary-label-->Join the Waitlist &rarr;<!--/VTL:hero-cta-primary-label--></a>
+        <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="hero-cta-primary"><!--VTL:hero-cta-primary-label-->Join the Waitlist &rarr;<!--/VTL:hero-cta-primary-label--></a>
         <a href="/speakers" class="hero-cta-secondary"><!--VTL:hero-cta-secondary-label-->Meet the Speakers<!--/VTL:hero-cta-secondary-label--></a>
       </div>
     </div>
@@ -708,37 +708,11 @@
       <p><!--VTL:waitlist-subtext-->Two days. Atlanta, Georgia. October 2 &amp; 3, 2026. Join the waitlist to be first when tickets open — and to get early access to speaker announcements, agenda updates, and community updates.<!--/VTL:waitlist-subtext--></p>
     </div>
     <div class="form-section">
-      <div id="form-container">
+      <div id="form-container" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;gap:20px;">
         <h2 class="form-title"><!--VTL:waitlist-form-title-->Be the First to Know<!--/VTL:waitlist-form-title--></h2>
         <p class="form-subhead"><!--VTL:waitlist-form-subhead-->Join the waitlist. No spam. Just elevatePAUSE updates.<!--/VTL:waitlist-form-subhead--></p>
-        <form id="waitlist-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" id="firstName" name="firstName" placeholder="First name" />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Last name" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="wellness_question">What are you hoping to understand about your wellness? <em style="opacity:.5;font-style:normal;">(optional)</em></label>
-            <textarea id="wellness_question" name="wellness_question" placeholder="Share as much or as little as you'd like..."></textarea>
-          </div>
-          <button type="submit" class="btn-submit" id="submit-btn">Join the Waitlist</button>
-          <div class="form-error" id="form-error" role="alert"></div>
-          <p class="form-disclaimer">No spam. Your information is never sold.</p>
-        </form>
-      </div>
-      <div class="form-success" id="form-success" aria-live="polite">
-        <div class="success-icon">✦</div>
-        <h3>You're on the list.</h3>
-        <p>We'll be in touch.</p>
+        <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="btn-submit" style="display:inline-block;text-decoration:none;text-align:center;">Join the Waitlist &rarr;</a>
+        <p class="form-disclaimer">No spam. Your information is never sold.</p>
       </div>
     </div>
   </section>
@@ -798,49 +772,7 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Waitlist form
-    const form = document.getElementById('waitlist-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const formError = document.getElementById('form-error');
-    const formContainer = document.getElementById('form-container');
-    const formSuccess = document.getElementById('form-success');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      formError.style.display = 'none';
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName  = document.getElementById('lastName').value.trim();
-      const email     = document.getElementById('email').value.trim();
-      const wellness_question = document.getElementById('wellness_question').value.trim();
-      if (!firstName || !lastName || !email) {
-        formError.textContent = 'Please fill in your first name, last name, and email.';
-        formError.style.display = 'block'; return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formError.textContent = 'Please enter a valid email address.';
-        formError.style.display = 'block'; return;
-      }
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Joining...';
-      try {
-        const res = await fetch('https://creativeagntcy.com/api/elevatepause-waitlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ firstName, lastName, email, wellness_question })
-        });
-        if (!res.ok) {
-          const data = await res.json().catch(() => ({}));
-          throw new Error(data.error || 'Something went wrong. Please try again.');
-        }
-        formContainer.style.display = 'none';
-        formSuccess.style.display = 'block';
-      } catch (err) {
-        formError.textContent = err.message || 'Something went wrong. Please try again.';
-        formError.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Join the Waitlist';
-      }
-    });
+    // Waitlist CTA -- links to Flodesk (https://shifther.myflodesk.com/community)
   </script>
 </body>
 </html>
