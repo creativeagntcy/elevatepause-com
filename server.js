@@ -40,6 +40,23 @@ app.use((req, res, next) => {
 // Redirect removed pages before static middleware can intercept
 app.get(['/agenda', '/agenda/'], (req, res) => res.redirect(301, '/'));
 
+// ── Coming Soon gate ────────────────────────────────────────────────────────
+const COMING_SOON = process.env.COMING_SOON === 'true';
+const PREVIEW_SECRET = process.env.PREVIEW_SECRET || 'elevatepause-preview-2026';
+app.use((req, res, next) => {
+  if (!COMING_SOON) return next();
+  // Allow: health check, static assets, sponsorship routes, preview bypass
+  if (
+    req.path.startsWith('/health') ||
+    req.path.startsWith('/assets') ||
+    req.path.startsWith('/sponsorship') ||
+    req.path.startsWith('/api') ||
+    req.query.preview === PREVIEW_SECRET
+  ) return next();
+  // Serve coming soon page
+  res.sendFile(path.join(__dirname, 'public', 'coming-soon.html'));
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/health', (req, res) => res.json({ status: 'ok', site: 'elevatepause', ts: new Date().toISOString() }));
