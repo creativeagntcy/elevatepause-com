@@ -37,6 +37,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Redirect removed pages before static middleware can intercept
+app.get(['/agenda', '/agenda/'], (req, res) => res.redirect(301, '/'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/health', (req, res) => res.json({ status: 'ok', site: 'elevatepause', ts: new Date().toISOString() }));
@@ -44,7 +47,6 @@ app.get('/health', (req, res) => res.json({ status: 'ok', site: 'elevatepause', 
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 app.get('/speakers', (req, res) => res.sendFile(path.join(__dirname, 'public', 'speakers', 'index.html')));
 app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html')));
-app.get('/agenda', (req, res) => res.redirect(301, '/'));
 
 // Sponsorship login page
 app.get('/sponsorship/enter', (req, res) => {
