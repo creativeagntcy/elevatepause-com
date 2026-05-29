@@ -51,6 +51,8 @@ app.use((req, res, next) => {
     req.path.startsWith('/assets') ||
     req.path.startsWith('/sponsorship') ||
     req.path.startsWith('/api') ||
+    req.path.startsWith('/portal') ||
+    req.path.startsWith('/vtl') ||
     req.query.preview === PREVIEW_SECRET
   ) return next();
   // Serve coming soon page
