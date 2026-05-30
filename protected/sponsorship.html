@@ -322,68 +322,26 @@
       text-decoration: none;
     }
 
-    /* ── Video Facade ── */
+    /* ── Video — top of page ── */
     .video-section {
-      padding: 80px 40px;
-      background: var(--plum-dark);
+      background: #000;
+      width: 100%;
     }
     .video-section-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
+      width: 100%;
     }
-    .video-section .section-label { color: var(--lavender); }
-    .video-section h2 {
-      font-size: clamp(28px, 3.5vw, 42px);
-      color: var(--white);
-      margin-bottom: 36px;
-    }
-    .video-facade {
+    .video-embed-wrap {
       position: relative;
       width: 100%;
       aspect-ratio: 16/9;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
       background: #000;
-      box-shadow: 0 8px 48px rgba(0,0,0,0.5);
     }
-    .video-thumb {
+    .video-embed-wrap iframe {
+      position: absolute;
+      inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover;
+      border: none;
       display: block;
-      transition: transform 0.4s ease;
-    }
-    .video-facade:hover .video-thumb { transform: scale(1.03); }
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(42,38,97,0.35);
-      transition: background 0.3s ease;
-    }
-    .video-facade:hover .video-overlay { background: rgba(42,38,97,0.15); }
-    .play-btn {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px; height: 80px;
-      background: rgba(255,255,255,0.95);
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s ease, background 0.2s ease;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-    }
-    .play-btn:hover { transform: translate(-50%, -50%) scale(1.1); background: var(--white); }
-    .play-btn svg { width: 32px; height: 32px; fill: var(--plum); margin-left: 4px; }
-    .video-facade iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      border: none;
     }
 
     /* ── Marquee ── */
@@ -445,6 +403,21 @@
 </head>
 <body>
 
+  <!-- Video — top of page, autoplays muted -->
+  <section class="video-section">
+    <div class="video-section-inner">
+      <div class="video-embed-wrap">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/H5C4o4ZYhDU?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&color=white&playsinline=1"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="elevatePAUSE 2026"
+          loading="eager"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- Brand mark -->
   <a href="https://www.elevatepause.com" class="header-brand" id="site-nav">
     <span class="header-brand-elevate">elevate</span><span class="header-brand-pause">PAUSE™</span>
@@ -457,21 +430,6 @@
     <div class="hero-rule" aria-hidden="true"></div>
     <p>Reach informed, engaged women navigating midlife — at the intersection of wellness, longevity, and community. Limited sponsorship packages available.</p>
     <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Start the Conversation</a>
-  </section>
-
-  <!-- Video -->
-  <section class="video-section fade-in">
-    <div class="video-section-inner">
-      <p class="section-label">The Vision</p>
-      <h2>See What elevatePAUSE Is Building</h2>
-      <div class="video-facade" id="video-facade" data-vid="H5C4o4ZYhDU" role="button" tabindex="0" aria-label="Play video">
-        <img class="video-thumb" src="https://img.youtube.com/vi/H5C4o4ZYhDU/maxresdefault.jpg" alt="elevatePAUSE 2026 preview" loading="eager" />
-        <div class="video-overlay"></div>
-        <button class="play-btn" aria-label="Play">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
-        </button>
-      </div>
-    </div>
   </section>
 
   <!-- Marquee Strip -->
@@ -596,20 +554,6 @@
     window.addEventListener('scroll', () => {
       siteNav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
-
-    // ── Video facade ──
-    const facade = document.getElementById('video-facade');
-    function activateVideo() {
-      const vid = facade.dataset.vid;
-      facade.innerHTML = `<iframe
-        src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&color=white"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        title="elevatePAUSE 2026"
-      ></iframe>`;
-    }
-    facade.addEventListener('click', activateVideo);
-    facade.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activateVideo(); });
 
     // ── Intersection observer (fade-in + stagger cards) ──
     const observer = new IntersectionObserver((entries) => {
