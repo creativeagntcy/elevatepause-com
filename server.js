@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ── Sponsorship password gate ──
-const SPONSOR_PASSWORD = (process.env.SPONSOR_PASSWORD || 'EVEVATED').toUpperCase();
+const SPONSOR_PASSWORD = (process.env.SPONSOR_PASSWORD || 'ELEVATED').toUpperCase();
 const COOKIE_NAME = 'ep_access';
 const COOKIE_SALT = process.env.COOKIE_SALT || 'ep-salt-2026-im';
 
