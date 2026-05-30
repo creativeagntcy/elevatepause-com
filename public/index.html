@@ -508,6 +508,129 @@
     .footer-nav a:hover { color: var(--white); }
     .footer-copy { color: rgba(255,255,255,0.65); }
 
+    /* ── Countdown Timer ── */
+    .hero-countdown {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .countdown-unit {
+      text-align: center;
+      background: rgba(61,24,96,0.08);
+      border: 1px solid rgba(61,24,96,0.18);
+      border-radius: 8px;
+      padding: 12px 18px;
+      min-width: 72px;
+    }
+    .countdown-number {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--plum);
+      line-height: 1;
+      display: block;
+    }
+    .countdown-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--plum-light);
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* ── Marquee Strip ── */
+    .marquee-strip {
+      background: var(--plum-dark);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      animation: marquee-scroll 36s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item {
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      padding: 0 28px;
+    }
+    .marquee-sep {
+      color: var(--plum-light);
+      opacity: 0.7;
+      font-size: 14px;
+      align-self: center;
+    }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Stat Numbers ── */
+    .stat-number {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(52px, 7vw, 80px);
+      font-weight: 600;
+      color: var(--plum);
+      line-height: 1;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .stat-card p {
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+      color: var(--text-mid) !important;
+      line-height: 1.65 !important;
+    }
+
+    /* ── Hero image float ── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-12px); }
+    }
+    .hero-img-wrap { animation: float 7s ease-in-out infinite; }
+
+    /* ── Stagger delays ── */
+    .reasons-grid .reason-card { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reasons-grid .reason-card.visible { opacity: 1; transform: translateY(0); }
+    .reasons-grid .reason-card:nth-child(1) { transition-delay: 0s; }
+    .reasons-grid .reason-card:nth-child(2) { transition-delay: 0.1s; }
+    .reasons-grid .reason-card:nth-child(3) { transition-delay: 0.2s; }
+    .reasons-grid .reason-card:nth-child(4) { transition-delay: 0.3s; }
+    .reasons-grid .reason-card:nth-child(5) { transition-delay: 0.4s; }
+    .expect-grid .expect-card { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .expect-grid .expect-card.visible { opacity: 1; transform: translateY(0); }
+    .expect-grid .expect-card:nth-child(1) { transition-delay: 0s; }
+    .expect-grid .expect-card:nth-child(2) { transition-delay: 0.15s; }
+    .expect-grid .expect-card:nth-child(3) { transition-delay: 0.3s; }
+    .checklist .check-item { opacity: 0; transform: translateX(-16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .checklist .check-item.visible { opacity: 1; transform: translateX(0); }
+    .checklist .check-item:nth-child(1) { transition-delay: 0s; }
+    .checklist .check-item:nth-child(2) { transition-delay: 0.1s; }
+    .checklist .check-item:nth-child(3) { transition-delay: 0.2s; }
+    .checklist .check-item:nth-child(4) { transition-delay: 0.3s; }
+    .checklist .check-item:nth-child(5) { transition-delay: 0.4s; }
+    .stats-grid .stat-card { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .stats-grid .stat-card.visible { opacity: 1; transform: translateY(0); }
+    .stats-grid .stat-card:nth-child(1) { transition-delay: 0s; }
+    .stats-grid .stat-card:nth-child(2) { transition-delay: 0.15s; }
+    .stats-grid .stat-card:nth-child(3) { transition-delay: 0.3s; }
+
+    /* ── Nav scroll effect ── */
+    .site-nav { transition: background 0.3s ease, box-shadow 0.3s ease; }
+    .site-nav.scrolled {
+      background: rgba(42,38,97,0.98);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
       .site-nav { padding: 0 24px; }
@@ -577,6 +700,13 @@
       <h1><!--VTL:hero-headline-primary-->The conversations midlife women <!--/VTL:hero-headline-primary--><em><!--VTL:hero-headline-em-->have been waiting for.<!--/VTL:hero-headline-em--></em></h1>
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-desc"><!--VTL:hero-paragraph-->elevatePAUSE™ 2026 is a clinician-led midlife and longevity summit helping women navigate <strong>perimenopause, menopause, hormonal health, and healthy aging</strong> through evidence-based education, expert guidance, and real conversations.<!--/VTL:hero-paragraph--></p>
+      <!-- Countdown -->
+      <div class="hero-countdown" id="hero-countdown">
+        <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+        <div class="countdown-unit"><span class="countdown-number" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+      </div>
       <div class="hero-meta">
         <div class="hero-meta-item">
           <svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -604,6 +734,38 @@
       </div>
     </div>
   </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track" id="marquee-track">
+      <span class="marquee-item">Perimenopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Menopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Hormonal Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Longevity</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">HRT</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Brain Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Metabolic Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Sleep Science</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Self-Advocacy</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Lab Literacy</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Healthy Aging</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Mental Wellness</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Perimenopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Menopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Hormonal Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Longevity</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">HRT</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Brain Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Metabolic Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Sleep Science</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Self-Advocacy</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Lab Literacy</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Healthy Aging</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Mental Wellness</span><span class="marquee-sep">·</span>
+    </div>
+  </div>
 
   <!-- FIVE REASONS -->
   <section class="reasons-section fade-in" id="experience">
@@ -651,17 +813,20 @@
   </section>
 
   <!-- STATS -->
-  <section class="stats-section fade-in">
-    <h2><!--VTL:stats-headline-->The information you need. The community you deserve.<!--/VTL:stats-headline--></h2>
+  <section class="stats-section">
+    <h2 class="fade-in"><!--VTL:stats-headline-->The information you need. The community you deserve.<!--/VTL:stats-headline--></h2>
     <div class="stats-grid">
       <div class="stat-card">
-        <p><!--VTL:stat-1-->"More than 1 million women enter menopause each year in the US — most receive no formal education about what's happening to their bodies."<!--/VTL:stat-1--></p>
+        <span class="stat-number" data-target="1" data-suffix="M+">1M+</span>
+        <p><!--VTL:stat-1-->women enter menopause each year in the US — most with no formal education about what's happening to their bodies.<!--/VTL:stat-1--></p>
       </div>
       <div class="stat-card">
-        <p><!--VTL:stat-2-->"Women wait an average of 10 years before getting an accurate perimenopause diagnosis. Informed women navigate this transition differently."<!--/VTL:stat-2--></p>
+        <span class="stat-number" data-target="10" data-suffix=" yrs">10 yrs</span>
+        <p><!--VTL:stat-2-->average wait before an accurate perimenopause diagnosis. Informed women navigate this transition differently.<!--/VTL:stat-2--></p>
       </div>
       <div class="stat-card">
-        <p><!--VTL:stat-3-->"The global women's health market is projected to reach $60B by 2027. This moment demands better conversations — and better care."<!--/VTL:stat-3--></p>
+        <span class="stat-number" data-target="60" data-prefix="$" data-suffix="B">$60B</span>
+        <p><!--VTL:stat-3-->projected women's health market by 2027. This moment demands better conversations — and better care.<!--/VTL:stat-3--></p>
       </div>
     </div>
   </section>
@@ -756,23 +921,70 @@
   </footer>
 
   <script>
-    // Hamburger
+    // ── Hamburger ──
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-    // Fade-in observer
+    // ── Nav scroll effect ──
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Countdown timer (target: Oct 2 2026 8am Atlanta EDT) ──
+    function updateCountdown() {
+      const target = new Date('2026-10-02T08:00:00-04:00');
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '0');
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('cd-days').textContent = d;
+      document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+      document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // ── Animated stat counters ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1800;
+      const start = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.floor(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+
+    // ── Intersection observer (fade-in + stagger cards + stat counters) ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        el.classList.add('visible');
+        // Animate stat number if present
+        const num = el.querySelector ? el.querySelector('.stat-number') : null;
+        if (num && num.dataset.target) animateCounter(num);
+        observer.unobserve(el);
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
+
+    // Standard fade-in elements
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Waitlist CTA -- links to Flodesk (https://shifther.myflodesk.com/community)
+    // Staggered card groups
+    document.querySelectorAll('.reason-card, .expect-card, .check-item, .stat-card').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
