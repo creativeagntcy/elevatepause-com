@@ -322,6 +322,116 @@
       text-decoration: none;
     }
 
+    /* ── Video Facade ── */
+    .video-section {
+      padding: 80px 40px;
+      background: var(--plum-dark);
+    }
+    .video-section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .video-section .section-label { color: var(--lavender); }
+    .video-section h2 {
+      font-size: clamp(28px, 3.5vw, 42px);
+      color: var(--white);
+      margin-bottom: 36px;
+    }
+    .video-facade {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background: #000;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+    }
+    .video-thumb {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .video-facade:hover .video-thumb { transform: scale(1.03); }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(42,38,97,0.35);
+      transition: background 0.3s ease;
+    }
+    .video-facade:hover .video-overlay { background: rgba(42,38,97,0.15); }
+    .play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.95);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background 0.2s ease;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+    .play-btn:hover { transform: translate(-50%, -50%) scale(1.1); background: var(--white); }
+    .play-btn svg { width: 32px; height: 32px; fill: var(--plum); margin-left: 4px; }
+    .video-facade iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ── Marquee ── */
+    .marquee-strip {
+      background: var(--plum);
+      padding: 13px 0;
+      overflow: hidden;
+    }
+    .marquee-track {
+      display: flex;
+      animation: marquee-scroll 38s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item {
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lavender);
+      padding: 0 28px;
+    }
+    .marquee-sep { color: var(--plum-light); opacity: 0.7; font-size: 14px; align-self: center; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Stagger animations ── */
+    .stats-grid .stat-card { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .stats-grid .stat-card.visible { opacity: 1; transform: translateY(0); }
+    .stats-grid .stat-card:nth-child(1) { transition-delay: 0s; }
+    .stats-grid .stat-card:nth-child(2) { transition-delay: 0.15s; }
+    .stats-grid .stat-card:nth-child(3) { transition-delay: 0.3s; }
+    .why-grid .why-card { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .why-grid .why-card.visible { opacity: 1; transform: translateY(0); }
+    .why-grid .why-card:nth-child(1) { transition-delay: 0s; }
+    .why-grid .why-card:nth-child(2) { transition-delay: 0.1s; }
+    .why-grid .why-card:nth-child(3) { transition-delay: 0.2s; }
+    .why-grid .why-card:nth-child(4) { transition-delay: 0.3s; }
+    .why-grid .why-card:nth-child(5) { transition-delay: 0.4s; }
+    .why-grid .why-card:nth-child(6) { transition-delay: 0.5s; }
+
+    /* ── Nav scroll effect ── */
+    .header-brand { transition: background 0.3s ease, box-shadow 0.3s ease; }
+    .header-brand.scrolled { background: rgba(42,38,97,0.98); box-shadow: 0 2px 24px rgba(0,0,0,0.2); }
+
     /* ── Responsive ── */
     @media (max-width: 768px) {
       .header-brand { font-size: 15px; top: 20px; left: 16px; }
@@ -336,7 +446,7 @@
 <body>
 
   <!-- Brand mark -->
-  <a href="https://www.elevatepause.com" class="header-brand">
+  <a href="https://www.elevatepause.com" class="header-brand" id="site-nav">
     <span class="header-brand-elevate">elevate</span><span class="header-brand-pause">PAUSE™</span>
   </a>
 
@@ -348,6 +458,45 @@
     <p>Reach informed, engaged women navigating midlife — at the intersection of wellness, longevity, and community. Limited sponsorship packages available.</p>
     <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Start the Conversation</a>
   </section>
+
+  <!-- Video -->
+  <section class="video-section fade-in">
+    <div class="video-section-inner">
+      <p class="section-label">The Vision</p>
+      <h2>See What elevatePAUSE Is Building</h2>
+      <div class="video-facade" id="video-facade" data-vid="H5C4o4ZYhDU" role="button" tabindex="0" aria-label="Play video">
+        <img class="video-thumb" src="https://img.youtube.com/vi/H5C4o4ZYhDU/maxresdefault.jpg" alt="elevatePAUSE 2026 preview" loading="eager" />
+        <div class="video-overlay"></div>
+        <button class="play-btn" aria-label="Play">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Strip -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Women's Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Longevity</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Wellness</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Perimenopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Clinician-Led</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Atlanta 2026</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">High-Intent Audience</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Limited Sponsorships</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Women's Health</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Longevity</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Wellness</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Perimenopause</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Community</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Clinician-Led</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Atlanta 2026</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">High-Intent Audience</span><span class="marquee-sep">·</span>
+      <span class="marquee-item">Limited Sponsorships</span><span class="marquee-sep">·</span>
+    </div>
+  </div>
 
   <!-- Audience snapshot -->
   <section class="stats-section fade-in">
@@ -442,15 +591,37 @@
   </footer>
 
   <script>
+    // ── Nav scroll effect ──
+    const siteNav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      siteNav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Video facade ──
+    const facade = document.getElementById('video-facade');
+    function activateVideo() {
+      const vid = facade.dataset.vid;
+      facade.innerHTML = `<iframe
+        src="https://www.youtube-nocookie.com/embed/${vid}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&color=white"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="elevatePAUSE 2026"
+      ></iframe>`;
+    }
+    facade.addEventListener('click', activateVideo);
+    facade.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') activateVideo(); });
+
+    // ── Intersection observer (fade-in + stagger cards) ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
+
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.stat-card, .why-card').forEach(el => observer.observe(el));
   </script>
 
 </body>
