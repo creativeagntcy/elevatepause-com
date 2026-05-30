@@ -58,10 +58,133 @@
     }
     .nav-cta:hover { background: var(--lime-hover); transform: translateY(-1px); }
 
-    /* ── Video ── */
-    .video-section { background: #000; width: 100%; }
-    .video-embed-wrap { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; }
-    .video-embed-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; }
+    /* ── Hero Video ── */
+    .hero-video {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .video-bg iframe {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 177.78vh;
+      height: 100vh;
+      min-width: 100%;
+      min-height: 56.25vw;
+      border: none;
+      pointer-events: none;
+    }
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(42,38,97,0.82) 0%,
+        rgba(61,24,96,0.70) 50%,
+        rgba(42,38,97,0.78) 100%
+      );
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 100px 40px 140px;
+      max-width: 780px;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--lavender);
+      margin-bottom: 28px; opacity: 0.9;
+    }
+    .hero-content h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      color: var(--white); line-height: 1.0;
+      letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+    .hero-content h1 em { font-style: italic; color: var(--lavender); display: block; }
+    .hero-rule { width: 60px; height: 2px; background: var(--lavender); margin: 24px auto 28px; opacity: 0.5; }
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255,255,255,0.8); max-width: 520px;
+      margin: 0 auto 40px; line-height: 1.65;
+    }
+    .hero-cta {
+      display: inline-block; background: var(--lime-cta); color: #000;
+      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 18px 44px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-cta:hover { background: var(--lime-hover); transform: translateY(-2px); }
+
+    /* ── Floating expert cards ── */
+    .expert-card {
+      position: absolute; z-index: 3;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+      max-width: 260px;
+      animation: card-float 6s ease-in-out infinite;
+    }
+    .expert-card-2 { animation-delay: -3s; animation-duration: 7s; }
+    .expert-card-3 { animation-delay: -1.5s; animation-duration: 8s; }
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .card-pos-1 { bottom: 120px; left: 60px; }
+    .card-pos-2 { bottom: 160px; right: 60px; }
+    .card-pos-3 { top: 140px; right: 80px; }
+    .expert-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--plum-light), var(--plum));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .expert-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 14px; font-weight: 600; color: var(--white);
+      line-height: 1.2; margin-bottom: 3px;
+    }
+    .expert-title {
+      font-size: 11px; color: var(--lavender);
+      letter-spacing: 0.04em; line-height: 1.3;
+    }
+
+    /* ── Scroll cue ── */
+    .scroll-cue {
+      position: absolute; bottom: 32px; left: 50%;
+      transform: translateX(-50%);
+      z-index: 3; text-align: center;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .scroll-cue span {
+      display: block; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5); margin-bottom: 6px;
+    }
+    .scroll-cue svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.4); fill: none; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
 
     /* ── Marquee ── */
     .marquee-strip { background: var(--plum); padding: 13px 0; overflow: hidden; }
@@ -76,42 +199,7 @@
     .marquee-sep { color: var(--plum-light); opacity: 0.7; font-size: 14px; align-self: center; }
     @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ── Hero (dark) ── */
-    .hero {
-      background: var(--plum-dark); color: var(--white);
-      padding: 100px 40px 90px; text-align: center;
-    }
-    .hero-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--lavender); margin-bottom: 24px; opacity: 0.9;
-    }
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 76px); color: var(--white);
-      margin-bottom: 16px; letter-spacing: -0.01em; line-height: 1.05;
-    }
-    .hero h1 em { font-style: italic; color: var(--lavender); }
-    .hero-rule { width: 60px; height: 2px; background: var(--plum-light); margin: 20px auto 28px; }
-    .hero p {
-      font-size: clamp(17px, 2vw, 21px); color: rgba(255,255,255,0.8);
-      max-width: 600px; margin: 0 auto 40px; line-height: 1.65;
-    }
-    .hero-pills {
-      display: flex; align-items: center; justify-content: center;
-      gap: 12px; flex-wrap: wrap; margin-bottom: 44px;
-    }
-    .hero-pill {
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 100px; padding: 8px 20px;
-      font-size: 13px; font-weight: 600; color: var(--lavender);
-      letter-spacing: 0.04em;
-    }
-    .hero-cta {
-      display: inline-block; background: var(--lime-cta); color: #000;
-      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
-      padding: 18px 44px; border-radius: 6px; text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .hero-cta:hover { background: var(--lime-hover); transform: translateY(-2px); }
+    /* hero-cta also used in CTA section below */
 
     /* ── Section label ── */
     .section-label {
@@ -273,7 +361,28 @@
     .footer-brand { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
     footer a { color: var(--lavender); text-decoration: none; }
 
+    /* ── CTA button (reused) ── */
+    .hero-cta {
+      display: inline-block; background: var(--lime-cta); color: #000;
+      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 18px 44px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .hero-cta:hover { background: var(--lime-hover); transform: translateY(-2px); }
+
     /* ── Responsive ── */
+    @media (max-width: 960px) {
+      .card-pos-1 { bottom: 80px; left: 16px; max-width: 200px; }
+      .card-pos-2 { bottom: 80px; right: 16px; max-width: 200px; }
+      .card-pos-3 { display: none; }
+      .expert-name { font-size: 12px; }
+      .expert-title { font-size: 10px; }
+      .expert-avatar { width: 36px; height: 36px; font-size: 16px; }
+    }
+    @media (max-width: 640px) {
+      .card-pos-1, .card-pos-2 { display: none; }
+      .hero-content { padding: 80px 24px 100px; }
+    }
     @media (max-width: 960px) {
       .tiers-grid { grid-template-columns: 1fr; max-width: 480px; }
       .tier-card.featured { transform: none; }
@@ -300,17 +409,64 @@
     <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="nav-cta">Inquire Now</a>
   </nav>
 
-  <!-- Video — autoplays muted at top -->
-  <section class="video-section">
-    <div class="video-embed-wrap">
+  <!-- Cinematic Hero: video background + overlay + content + floating cards -->
+  <section class="hero-video">
+
+    <!-- Background video -->
+    <div class="video-bg">
       <iframe
-        src="https://www.youtube-nocookie.com/embed/H5C4o4ZYhDU?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&color=white&playsinline=1"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        title="elevatePAUSE 2026"
+        src="https://www.youtube-nocookie.com/embed/H5C4o4ZYhDU?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&controls=0&loop=1&playlist=H5C4o4ZYhDU&playsinline=1"
+        allow="autoplay; fullscreen"
+        title="elevatePAUSE 2026 background"
         loading="eager"
+        tabindex="-1"
+        aria-hidden="true"
       ></iframe>
     </div>
+
+    <!-- Overlay -->
+    <div class="video-overlay" aria-hidden="true"></div>
+
+    <!-- Centered content -->
+    <div class="hero-content">
+      <p class="hero-eyebrow">Atlanta &nbsp;&middot;&nbsp; October 2&ndash;3, 2026 &nbsp;&middot;&nbsp; A shiftHER&trade; Experience</p>
+      <h1>Reach Her<em>Where It Matters</em></h1>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-sub">500+ high-intent women. 20+ expert clinicians. Two days of real decisions being made.</p>
+      <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Inquire About Sponsorship &rarr;</a>
+    </div>
+
+    <!-- Floating expert cards -->
+    <div class="expert-card card-pos-1">
+      <div class="expert-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
+      <div>
+        <div class="expert-name">Dr. Jessica Shepherd</div>
+        <div class="expert-title">OB/GYN &middot; Menopause Specialist</div>
+      </div>
+    </div>
+
+    <div class="expert-card expert-card-2 card-pos-2">
+      <div class="expert-avatar">&#x1F9E0;</div>
+      <div>
+        <div class="expert-name">Keynote Speaker</div>
+        <div class="expert-title">Board-Certified Clinician</div>
+      </div>
+    </div>
+
+    <div class="expert-card expert-card-3 card-pos-3">
+      <div class="expert-avatar">&#x2728;</div>
+      <div>
+        <div class="expert-name">20+ Experts</div>
+        <div class="expert-title">Physicians &middot; Researchers &middot; Advocates</div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Explore</span>
+      <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+
   </section>
 
   <!-- Marquee -->
@@ -336,21 +492,6 @@
       <span class="marquee-item">Oct 2 &amp; 3</span><span class="marquee-sep">·</span>
     </div>
   </div>
-
-  <!-- Hero -->
-  <section class="hero">
-    <p class="hero-eyebrow">A shiftHER™ Experience &nbsp;·&nbsp; Atlanta, GA &nbsp;·&nbsp; October 2–3, 2026</p>
-    <h1>Put Your Brand in the Room<br><em>Where It Matters</em></h1>
-    <div class="hero-rule" aria-hidden="true"></div>
-    <p>Reach 500+ high-intent women navigating midlife — making real decisions about their health, finances, and lifestyle. Limited sponsorship packages available for our inaugural 2026 summit.</p>
-    <div class="hero-pills">
-      <span class="hero-pill">500+ Attendees</span>
-      <span class="hero-pill">20+ Expert Speakers</span>
-      <span class="hero-pill">2 Days · Atlanta</span>
-      <span class="hero-pill">Limited Packages</span>
-    </div>
-    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Inquire About Sponsorship &rarr;</a>
-  </section>
 
   <!-- Audience Stats -->
   <section class="stats-section">
