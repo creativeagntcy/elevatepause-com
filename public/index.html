@@ -334,14 +334,20 @@
       margin: 0 auto 60px;
     }
     .expect-card {
-      padding: 40px 32px;
       border: 1px solid rgba(61,24,96,0.12);
-      border-radius: 8px;
+      border-radius: 12px;
       background: var(--white);
-      transition: background 0.2s, transform 0.2s;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .expect-card:hover { background: var(--white); transform: translateY(-4px); }
-    .expect-card h3 { font-size: 22px; color: var(--plum); margin-bottom: 12px; }
+    .expect-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(61,24,96,0.12); }
+    .expect-card-img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .expect-card-body { padding: 28px 32px 36px; }
+    .expect-card h3 { font-size: 22px; color: var(--plum); margin-bottom: 10px; }
     .expect-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
     /* ── Who it's for ── */
@@ -837,16 +843,25 @@
     <h2><!--VTL:expect-headline-->What to Expect<!--/VTL:expect-headline--></h2>
     <div class="expect-grid">
       <div class="expect-card">
-        <h3><!--VTL:expect-1-title-->Clinician-Led Sessions<!--/VTL:expect-1-title--></h3>
-        <p><!--VTL:expect-1-desc-->Board-certified physicians and specialists delivering evidence-based education on perimenopause, menopause, hormonal health, metabolic health, and longevity.<!--/VTL:expect-1-desc--></p>
+        <img src="/assets/expect-clinician.jpg" alt="Clinician-led sessions at elevatePAUSE" class="expect-card-img" loading="lazy" />
+        <div class="expect-card-body">
+          <h3><!--VTL:expect-1-title-->Clinician-Led Sessions<!--/VTL:expect-1-title--></h3>
+          <p><!--VTL:expect-1-desc-->Board-certified physicians and specialists delivering evidence-based education on perimenopause, menopause, hormonal health, metabolic health, and longevity.<!--/VTL:expect-1-desc--></p>
+        </div>
       </div>
       <div class="expect-card">
-        <h3><!--VTL:expect-2-title-->Actionable Frameworks<!--/VTL:expect-2-title--></h3>
-        <p><!--VTL:expect-2-desc-->Leave with practical tools — how to read your labs, how to talk to your doctor, how to evaluate treatment options and make decisions that fit your life.<!--/VTL:expect-2-desc--></p>
+        <img src="/assets/expect-frameworks.jpg" alt="Actionable frameworks for women's health" class="expect-card-img" loading="lazy" />
+        <div class="expect-card-body">
+          <h3><!--VTL:expect-2-title-->Actionable Frameworks<!--/VTL:expect-2-title--></h3>
+          <p><!--VTL:expect-2-desc-->Leave with practical tools — how to read your labs, how to talk to your doctor, how to evaluate treatment options and make decisions that fit your life.<!--/VTL:expect-2-desc--></p>
+        </div>
       </div>
       <div class="expect-card">
-        <h3><!--VTL:expect-3-title-->Community<!--/VTL:expect-3-title--></h3>
-        <p><!--VTL:expect-3-desc-->Two days in a room full of women navigating the same terrain. The isolation of midlife health challenges ends here.<!--/VTL:expect-3-desc--></p>
+        <img src="/assets/expect-community.jpg" alt="Community of women at elevatePAUSE" class="expect-card-img" loading="lazy" />
+        <div class="expect-card-body">
+          <h3><!--VTL:expect-3-title-->Community<!--/VTL:expect-3-title--></h3>
+          <p><!--VTL:expect-3-desc-->Two days in a room full of women navigating the same terrain. The isolation of midlife health challenges ends here.<!--/VTL:expect-3-desc--></p>
+        </div>
       </div>
     </div>
     <div style="text-align:center; border-top: 1px solid rgba(200,196,232,0.25); padding-top: 48px; max-width: 700px; margin: 0 auto;">
