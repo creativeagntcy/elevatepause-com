@@ -6,6 +6,7 @@
   <title>Sponsorship Opportunities — elevatePAUSE™ 2026</title>
   <meta name="description" content="Partner with elevatePAUSE™ — a clinician-led midlife and longevity summit for women in Atlanta, October 2–3, 2026. Limited sponsorship packages available." />
   <meta name="robots" content="noindex, nofollow" />
+  <link rel="preload" as="image" href="/assets/atlanta-skyline-web.jpg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -58,132 +59,82 @@
     }
     .nav-cta:hover { background: var(--lime-hover); transform: translateY(-1px); }
 
-    /* ── Hero Video ── */
-    .hero-video {
+    /* ── Hero Photo ── */
+    .hero-photo {
       position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
+      width: 100%; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .video-bg {
-      position: absolute;
-      inset: 0;
-      overflow: hidden;
+    .hero-photo-bg {
+      position: absolute; inset: 0;
+      background: url('/assets/atlanta-skyline-web.jpg') center center / cover no-repeat;
       z-index: 0;
     }
-    .video-bg iframe {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 177.78vh;
-      height: 100vh;
-      min-width: 100%;
-      min-height: 56.25vw;
-      border: none;
-      pointer-events: none;
-    }
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        160deg,
-        rgba(42,38,97,0.82) 0%,
-        rgba(61,24,96,0.70) 50%,
-        rgba(42,38,97,0.78) 100%
-      );
+    .hero-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(42,38,97,0.82) 0%, rgba(61,24,96,0.72) 50%, rgba(42,38,97,0.80) 100%);
       z-index: 1;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 100px 40px 140px;
-      max-width: 780px;
+      position: relative; z-index: 2;
+      text-align: center; padding: 120px 40px 160px;
+      max-width: 800px;
     }
     .hero-eyebrow {
       font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--lavender);
-      margin-bottom: 28px; opacity: 0.9;
+      text-transform: uppercase; color: var(--lime-cta);
+      margin-bottom: 28px;
     }
     .hero-content h1 {
-      font-size: clamp(48px, 8vw, 96px);
+      font-size: clamp(52px, 8vw, 96px);
       color: var(--white); line-height: 1.0;
       letter-spacing: -0.02em; margin-bottom: 24px;
     }
     .hero-content h1 em { font-style: italic; color: var(--lavender); display: block; }
     .hero-rule { width: 60px; height: 2px; background: var(--lavender); margin: 24px auto 28px; opacity: 0.5; }
     .hero-sub {
-      font-size: clamp(16px, 2vw, 20px);
-      color: rgba(255,255,255,0.8); max-width: 520px;
-      margin: 0 auto 40px; line-height: 1.65;
+      font-size: clamp(16px, 2vw, 20px); color: rgba(255,255,255,0.82);
+      max-width: 560px; margin: 0 auto 40px; line-height: 1.65;
     }
+    .hero-stats-row {
+      display: flex; gap: 32px; justify-content: center;
+      flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .hero-stat {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px; padding: 12px 20px;
+    }
+    .hero-stat-icon { font-size: 20px; }
+    .hero-stat-text { text-align: left; }
+    .hero-stat-num { font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 600; color: var(--white); line-height: 1; }
+    .hero-stat-label { font-size: 11px; color: var(--lavender); letter-spacing: 0.06em; text-transform: uppercase; }
     .hero-cta {
-      display: inline-block; background: var(--lime-cta); color: #000;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lime-cta); color: #000;
       font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
       padding: 18px 44px; border-radius: 6px; text-decoration: none;
       transition: background 0.2s, transform 0.15s;
     }
     .hero-cta:hover { background: var(--lime-hover); transform: translateY(-2px); }
+    .hero-powered {
+      margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.55);
+      letter-spacing: 0.04em;
+    }
+    .hero-powered a { color: rgba(255,255,255,0.75); text-decoration: none; font-weight: 600; }
+    .hero-powered a:hover { color: var(--white); }
 
-    /* ── Floating expert cards ── */
-    .expert-card {
-      position: absolute; z-index: 3;
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.22);
-      border-radius: 14px;
-      padding: 16px 20px;
-      display: flex; align-items: center; gap: 14px;
-      max-width: 260px;
-      animation: card-float 6s ease-in-out infinite;
+    /* ── Hero bottom banner ── */
+    .hero-banner {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      z-index: 3; background: var(--lime-cta);
+      padding: 14px 40px; text-align: center;
     }
-    .expert-card-2 { animation-delay: -3s; animation-duration: 7s; }
-    .expert-card-3 { animation-delay: -1.5s; animation-duration: 8s; }
-    @keyframes card-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .card-pos-1 { bottom: 120px; left: 60px; }
-    .card-pos-2 { bottom: 160px; right: 60px; }
-    .card-pos-3 { top: 140px; right: 80px; }
-    .expert-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--plum-light), var(--plum));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.3);
-    }
-    .expert-name {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 14px; font-weight: 600; color: var(--white);
-      line-height: 1.2; margin-bottom: 3px;
-    }
-    .expert-title {
-      font-size: 11px; color: var(--lavender);
-      letter-spacing: 0.04em; line-height: 1.3;
-    }
-
-    /* ── Scroll cue ── */
-    .scroll-cue {
-      position: absolute; bottom: 32px; left: 50%;
-      transform: translateX(-50%);
-      z-index: 3; text-align: center;
-      animation: bounce 2s ease-in-out infinite;
-    }
-    .scroll-cue span {
-      display: block; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5); margin-bottom: 6px;
-    }
-    .scroll-cue svg { width: 20px; height: 20px; stroke: rgba(255,255,255,0.4); fill: none; }
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(6px); }
+    .hero-banner p {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #000;
     }
 
     /* ── Marquee ── */
@@ -199,8 +150,6 @@
     .marquee-sep { color: var(--plum-light); opacity: 0.7; font-size: 14px; align-self: center; }
     @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* hero-cta also used in CTA section below */
-
     /* ── Section label ── */
     .section-label {
       font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
@@ -208,7 +157,33 @@
       margin-bottom: 16px; opacity: 0.7;
     }
 
-    /* ── Audience Stats ── */
+    /* ── Why Audience Matters ── */
+    .audience-section {
+      padding: 100px 40px; background: var(--white);
+    }
+    .audience-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; max-width: 1100px; margin: 0 auto;
+      align-items: center;
+    }
+    .audience-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--plum); opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .audience-grid h2 {
+      font-size: clamp(28px, 3.5vw, 44px); color: var(--plum);
+      margin-bottom: 24px;
+    }
+    .audience-grid p { font-size: 16px; color: var(--text-mid); line-height: 1.75; margin-bottom: 18px; }
+    .audience-grid p strong { color: var(--plum); }
+    .audience-photo {
+      width: 100%; border-radius: 12px;
+      box-shadow: 0 12px 60px rgba(61,24,96,0.18);
+      object-fit: cover; aspect-ratio: 4/3;
+    }
+
+    /* ── Who You're Reaching (stats) ── */
     .stats-section { padding: 100px 40px; background: var(--lavender-light); }
     .stats-section h2 {
       font-size: clamp(30px, 4vw, 46px); color: var(--plum);
@@ -231,95 +206,118 @@
     .stat-card:nth-child(4) { transition-delay: 0.36s; }
     .stat-number {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(52px, 7vw, 80px); font-weight: 600;
+      font-size: clamp(42px, 5vw, 64px); font-weight: 600;
       color: var(--plum); line-height: 1; display: block; margin-bottom: 14px;
     }
     .stat-card p { font-size: 15px; color: var(--text-mid); line-height: 1.55; }
 
-    /* ── Sponsor Tiers ── */
+    /* ── Tiers ── */
     .tiers-section { padding: 100px 40px; background: var(--cream); }
-    .tiers-section .section-label { color: var(--plum); }
     .tiers-header { text-align: center; margin-bottom: 64px; }
     .tiers-header h2 { font-size: clamp(32px, 4vw, 52px); color: var(--plum); margin-bottom: 12px; }
-    .tiers-header p { font-size: 18px; color: var(--text-mid); max-width: 560px; margin: 0 auto; line-height: 1.6; }
+    .tiers-header p { font-size: 18px; color: var(--text-mid); max-width: 600px; margin: 0 auto; line-height: 1.6; }
     .tiers-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; max-width: 1100px; margin: 0 auto 48px;
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 20px; max-width: 1300px; margin: 0 auto 48px;
       align-items: start;
     }
     .tier-card {
-      background: var(--white); border-radius: 12px; padding: 40px 32px;
+      background: var(--white); border-radius: 12px; padding: 32px 24px;
       border: 1px solid rgba(61,24,96,0.1);
-      position: relative;
+      position: relative; display: flex; flex-direction: column;
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.2s;
     }
     .tier-card.visible { opacity: 1; transform: translateY(0); }
     .tier-card:nth-child(1) { transition-delay: 0s; }
-    .tier-card:nth-child(2) { transition-delay: 0.12s; }
-    .tier-card:nth-child(3) { transition-delay: 0.24s; }
-    .tier-card:hover { box-shadow: 0 8px 40px rgba(61,24,96,0.12); }
+    .tier-card:nth-child(2) { transition-delay: 0.1s; }
+    .tier-card:nth-child(3) { transition-delay: 0.2s; }
+    .tier-card:nth-child(4) { transition-delay: 0.3s; }
+    .tier-card:nth-child(5) { transition-delay: 0.4s; }
+    .tier-card:hover { box-shadow: 0 8px 40px rgba(61,24,96,0.14); }
     .tier-card.featured {
       background: var(--plum-dark); border-color: var(--plum-dark);
       transform: translateY(-8px);
     }
     .tier-card.featured.visible { transform: translateY(-8px); }
-    .tier-badge {
-      display: inline-block; background: var(--lime-cta); color: #000;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 4px 12px; border-radius: 100px;
-      margin-bottom: 20px;
+    .tier-card.featured:hover { transform: translateY(-12px); box-shadow: 0 16px 60px rgba(42,38,97,0.35); }
+    .tier-exclusive-badge {
+      background: var(--lime-cta); color: #000;
+      font-size: 9px; font-weight: 800; letter-spacing: 0.16em;
+      text-transform: uppercase; padding: 5px 12px;
+      border-radius: 4px 4px 0 0;
+      position: absolute; top: 0; left: 0; right: 0;
+      text-align: center;
     }
-    .tier-badge.exclusive { background: var(--lavender); color: var(--plum-dark); }
+    .tier-card.has-badge { padding-top: 46px; }
+    .tier-icon { font-size: 26px; margin-bottom: 16px; }
     .tier-name {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 26px; font-weight: 600; color: var(--plum);
-      margin-bottom: 8px;
+      font-size: 20px; font-weight: 600; color: var(--plum);
+      margin-bottom: 6px; line-height: 1.2;
     }
     .tier-card.featured .tier-name { color: var(--white); }
-    .tier-tagline { font-size: 14px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.5; }
+    .tier-price {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px; font-weight: 600; color: var(--plum);
+      margin-bottom: 6px; line-height: 1;
+    }
+    .tier-card.featured .tier-price { color: var(--lime-cta); }
+    .tier-availability {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--plum-light);
+      margin-bottom: 16px; opacity: 0.85;
+    }
+    .tier-card.featured .tier-availability { color: var(--lavender); }
+    .tier-tagline {
+      font-size: 13px; color: var(--text-mid); margin-bottom: 20px;
+      line-height: 1.5; font-style: italic;
+    }
     .tier-card.featured .tier-tagline { color: rgba(255,255,255,0.7); }
-    .tier-divider { height: 1px; background: rgba(61,24,96,0.1); margin-bottom: 24px; }
+    .tier-divider { height: 1px; background: rgba(61,24,96,0.1); margin-bottom: 20px; }
     .tier-card.featured .tier-divider { background: rgba(255,255,255,0.15); }
-    .tier-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
-    .tier-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-mid); line-height: 1.5; }
+    .tier-features {
+      list-style: none; display: flex; flex-direction: column;
+      gap: 10px; margin-bottom: 28px; flex-grow: 1;
+    }
+    .tier-features li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 13px; color: var(--text-mid); line-height: 1.5;
+    }
     .tier-card.featured .tier-features li { color: rgba(255,255,255,0.85); }
-    .tier-check { flex-shrink: 0; width: 18px; height: 18px; background: var(--plum-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 10px; font-weight: 700; margin-top: 1px; }
+    .tier-check {
+      flex-shrink: 0; width: 17px; height: 17px;
+      background: var(--plum-light); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 9px; font-weight: 700; margin-top: 1px;
+    }
     .tier-card.featured .tier-check { background: var(--lime-cta); color: #000; }
+    .tier-features li a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .tier-features li a:hover { opacity: 0.8; }
     .tier-cta {
       display: block; text-align: center;
       background: var(--plum); color: var(--white);
-      font-size: 14px; font-weight: 700; letter-spacing: 0.06em;
-      padding: 14px 24px; border-radius: 6px; text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 13px 20px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; margin-top: auto;
     }
     .tier-cta:hover { background: var(--plum-light); transform: translateY(-1px); }
     .tier-card.featured .tier-cta { background: var(--lime-cta); color: #000; }
     .tier-card.featured .tier-cta:hover { background: var(--lime-hover); }
     .tiers-note {
-      text-align: center; font-size: 14px; color: var(--text-mid); max-width: 500px; margin: 0 auto;
-      line-height: 1.6;
+      text-align: center; font-size: 14px; color: var(--text-mid);
+      max-width: 500px; margin: 0 auto; line-height: 1.6;
     }
     .tiers-note a { color: var(--plum-light); font-weight: 600; text-decoration: none; }
     .tiers-note a:hover { text-decoration: underline; }
 
-    /* ── Deck ── */
-    .deck-section { padding: 100px 40px; background: var(--lavender-light); }
-    .deck-section h2 { font-size: clamp(28px, 3.5vw, 44px); color: var(--plum); text-align: center; margin-bottom: 12px; }
-    .deck-subtitle { text-align: center; color: var(--text-mid); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
-    .deck-embed-wrap {
-      position: relative; width: 100%; max-width: 1000px; margin: 0 auto;
-      padding-top: 56.25%; border-radius: 8px; overflow: hidden;
-      box-shadow: 0 4px 40px rgba(61,24,96,0.14); background: var(--plum-dark);
+    /* ── Why Brands Partner ── */
+    .why-section { padding: 100px 40px; background: var(--white); }
+    .why-section h2 {
+      font-size: clamp(28px, 3.5vw, 44px); color: var(--plum);
+      text-align: center; margin-bottom: 60px;
     }
-    .deck-embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-    .deck-fallback { margin-top: 20px; text-align: center; font-size: 15px; color: var(--text-mid); }
-    .deck-fallback a { color: var(--plum-light); font-weight: 600; text-decoration: none; }
-    .deck-fallback a:hover { text-decoration: underline; }
-
-    /* ── Why Partner ── */
-    .why-section { padding: 100px 40px; background: var(--cream); }
-    .why-section h2 { font-size: clamp(32px, 4vw, 48px); color: var(--plum); text-align: center; margin-bottom: 60px; }
     .why-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 32px; max-width: 1100px; margin: 0 auto;
@@ -327,7 +325,6 @@
     .why-card {
       padding: 36px 28px; border-radius: 10px;
       border-top: 3px solid var(--lavender); background: var(--lavender-light);
-      transition: border-color 0.2s, transform 0.2s;
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.6s ease, transform 0.6s ease, border-color 0.2s;
     }
@@ -340,133 +337,193 @@
     .why-card:nth-child(5) { transition-delay: 0.4s; }
     .why-card:nth-child(6) { transition-delay: 0.5s; }
     .why-card-icon { font-size: 28px; margin-bottom: 16px; }
-    .why-card h3 { font-size: 20px; color: var(--plum); margin-bottom: 10px; }
+    .why-card h3 { font-size: 19px; color: var(--plum); margin-bottom: 10px; }
     .why-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
 
-    /* ── Final CTA ── */
-    .cta-section { padding: 120px 40px; background: var(--plum-dark); text-align: center; }
-    .cta-section .section-label { color: var(--lavender); opacity: 0.8; }
-    .cta-section h2 { font-size: clamp(36px, 5vw, 60px); color: var(--white); margin-bottom: 16px; }
-    .cta-section p {
-      font-size: 19px; color: rgba(255,255,255,0.75);
-      margin: 0 auto 44px; line-height: 1.65; max-width: 540px;
+    /* ── Intentional Exclusivity + Prospectus ── */
+    .exclusivity-section { padding: 100px 40px; background: var(--lavender-light); }
+    .exclusivity-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; max-width: 1100px; margin: 0 auto;
+      align-items: start;
     }
-    .cta-section .hero-cta { font-size: 17px; padding: 20px 52px; }
+    .exclusivity-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--plum); opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .exclusivity-grid h2 {
+      font-size: clamp(26px, 3vw, 40px); color: var(--plum); margin-bottom: 20px;
+    }
+    .exclusivity-grid p { font-size: 16px; color: var(--text-mid); line-height: 1.75; margin-bottom: 28px; }
+    .exclusivity-counts {
+      display: flex; flex-direction: column; gap: 12px; margin-bottom: 0;
+    }
+    .exclusivity-count-row {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 0; border-bottom: 1px solid rgba(61,24,96,0.1);
+    }
+    .exclusivity-count-row:last-child { border-bottom: none; }
+    .excl-num {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 28px; font-weight: 600; color: var(--plum);
+      min-width: 44px; text-align: right;
+    }
+    .excl-tier { font-size: 15px; color: var(--text-mid); font-weight: 500; }
+
+    /* Prospectus side */
+    .prospectus-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--plum); opacity: 0.7;
+      margin-bottom: 20px;
+    }
+    .prospectus-side h3 {
+      font-size: clamp(22px, 2.5vw, 34px); color: var(--plum); margin-bottom: 14px;
+    }
+    .prospectus-side p { font-size: 15px; color: var(--text-mid); line-height: 1.7; margin-bottom: 28px; }
+    .deck-embed-wrap {
+      position: relative; width: 100%; padding-top: 56.25%;
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 4px 40px rgba(61,24,96,0.14); background: var(--plum-dark);
+      margin-bottom: 20px;
+    }
+    .deck-embed-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .prospectus-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--plum); color: var(--white);
+      font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+      padding: 16px 36px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .prospectus-cta:hover { background: var(--plum-light); transform: translateY(-1px); }
+
+    /* ── Footer CTA ── */
+    .cta-section {
+      padding: 100px 40px; background: var(--plum-dark);
+    }
+    .cta-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center;
+    }
+    .cta-section .section-label { color: var(--lavender); opacity: 0.7; text-align: left; }
+    .cta-section h2 {
+      font-size: clamp(32px, 4vw, 52px); color: var(--white);
+      margin-bottom: 16px; max-width: 600px;
+    }
+    .cta-section p {
+      font-size: 17px; color: rgba(255,255,255,0.72);
+      line-height: 1.7; max-width: 560px;
+    }
+    .cta-right {
+      display: flex; flex-direction: column; gap: 16px;
+      align-items: flex-start; min-width: 240px;
+    }
+    .cta-big-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lime-cta); color: #000;
+      font-size: 16px; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 20px 44px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-big-btn:hover { background: var(--lime-hover); transform: translateY(-2px); }
+    .cta-limits {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px; padding: 20px 24px;
+    }
+    .cta-limits-title {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--lavender); opacity: 0.8;
+      margin-bottom: 12px;
+    }
+    .cta-limits ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .cta-limits li { font-size: 13px; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 8px; }
+    .cta-limits li::before { content: '—'; color: var(--lime-cta); font-weight: 700; }
 
     /* ── Footer ── */
     footer {
-      background: var(--plum); color: rgba(255,255,255,0.55);
+      background: var(--plum); color: rgba(255,255,255,0.5);
       text-align: center; padding: 40px 24px; font-size: 13px;
     }
-    .footer-brand { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: rgba(255,255,255,0.85); margin-bottom: 8px; }
-    footer a { color: var(--lavender); text-decoration: none; }
-
-    /* ── CTA button (reused) ── */
-    .hero-cta {
-      display: inline-block; background: var(--lime-cta); color: #000;
-      font-size: 16px; font-weight: 700; letter-spacing: 0.04em;
-      padding: 18px 44px; border-radius: 6px; text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
+    footer .footer-brand {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 10px; font-weight: 600;
     }
-    .hero-cta:hover { background: var(--lime-hover); transform: translateY(-2px); }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    footer a:hover { color: var(--white); }
 
     /* ── Responsive ── */
-    @media (max-width: 960px) {
-      .card-pos-1 { bottom: 80px; left: 16px; max-width: 200px; }
-      .card-pos-2 { bottom: 80px; right: 16px; max-width: 200px; }
-      .card-pos-3 { display: none; }
-      .expert-name { font-size: 12px; }
-      .expert-title { font-size: 10px; }
-      .expert-avatar { width: 36px; height: 36px; font-size: 16px; }
+    @media (max-width: 1200px) {
+      .tiers-grid { grid-template-columns: repeat(3, 1fr); }
+      .tier-card:nth-child(4),
+      .tier-card:nth-child(5) { grid-column: span 1; }
     }
-    @media (max-width: 640px) {
-      .card-pos-1, .card-pos-2 { display: none; }
-      .hero-content { padding: 80px 24px 100px; }
-    }
-    @media (max-width: 960px) {
-      .tiers-grid { grid-template-columns: 1fr; max-width: 480px; }
-      .tier-card.featured { transform: none; }
-      .tier-card.featured.visible { transform: none; }
+    @media (max-width: 900px) {
+      .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+      .tier-card.featured { transform: translateY(0); }
+      .tier-card.featured.visible { transform: translateY(0); }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 640px) {
+      .audience-grid, .exclusivity-grid { grid-template-columns: 1fr; gap: 48px; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-right { min-width: auto; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
       .site-nav { padding: 0 20px; }
-      .hero { padding: 72px 24px 72px; }
-      .stats-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .tiers-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
       .why-grid { grid-template-columns: 1fr; }
-      .stats-section, .tiers-section, .deck-section, .why-section, .cta-section { padding: 72px 24px; }
+      .hero-stats-row { flex-direction: column; align-items: center; }
+      .stats-section, .tiers-section, .why-section, .audience-section,
+      .exclusivity-section, .cta-section { padding: 70px 24px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Fixed Nav -->
+  <!-- Nav -->
   <nav class="site-nav" id="site-nav">
     <a href="https://www.elevatepause.com/?preview=elevatepause-preview-2026" class="nav-brand">
       <span class="nav-brand-e">elevate</span><span class="nav-brand-p">PAUSE™</span>
     </a>
-    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="nav-cta">Inquire Now</a>
+    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="nav-cta">Inquire About Sponsorship</a>
   </nav>
 
-  <!-- Cinematic Hero: video background + overlay + content + floating cards -->
-  <section class="hero-video">
-
-    <!-- Background video -->
-    <div class="video-bg">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/H5C4o4ZYhDU?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&controls=0&loop=1&playlist=H5C4o4ZYhDU&playsinline=1"
-        allow="autoplay; fullscreen"
-        title="elevatePAUSE 2026 background"
-        loading="eager"
-        tabindex="-1"
-        aria-hidden="true"
-      ></iframe>
-    </div>
-
-    <!-- Overlay -->
-    <div class="video-overlay" aria-hidden="true"></div>
-
-    <!-- Centered content -->
+  <!-- Hero -->
+  <section class="hero-photo">
+    <div class="hero-photo-bg" aria-hidden="true"></div>
+    <div class="hero-photo-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Atlanta &nbsp;&middot;&nbsp; October 2&ndash;3, 2026 &nbsp;&middot;&nbsp; A shiftHER&trade; Experience</p>
+      <p class="hero-eyebrow">Atlanta &nbsp;&middot;&nbsp; October 2&ndash;3, 2026</p>
       <h1>Reach Her<em>Where It Matters</em></h1>
       <div class="hero-rule" aria-hidden="true"></div>
-      <p class="hero-sub">500+ high-intent women. 20+ expert clinicians. Two days of real decisions being made.</p>
+      <p class="hero-sub">Connect with women actively investing in their health, longevity, and quality of life through a curated experience designed for meaningful engagement.</p>
+      <div class="hero-stats-row">
+        <div class="hero-stat">
+          <div class="hero-stat-text">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">High-Intent Attendees</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-text">
+            <div class="hero-stat-num">20+</div>
+            <div class="hero-stat-label">Physicians &amp; Specialists</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-text">
+            <div class="hero-stat-num">VIP</div>
+            <div class="hero-stat-label">Reception + Summit</div>
+          </div>
+        </div>
+      </div>
       <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Inquire About Sponsorship &rarr;</a>
+      <p class="hero-powered">Powered by <a href="https://www.shiftherinc.com" target="_blank" rel="noopener">shiftHER&trade;</a> and <a href="https://www.jessicashepherdmd.com/modern-meno-community" target="_blank" rel="noopener">ModernMeno</a></p>
     </div>
-
-    <!-- Floating expert cards -->
-    <div class="expert-card card-pos-1">
-      <div class="expert-avatar">&#x1F469;&#x200D;&#x2695;&#xFE0F;</div>
-      <div>
-        <div class="expert-name">Dr. Jessica Shepherd</div>
-        <div class="expert-title">OB/GYN &middot; Menopause Specialist</div>
-      </div>
+    <div class="hero-banner">
+      <p>&#x25C6;&ensp; Sponsorship opportunities intentionally limited to maximize partner visibility and attendee engagement.</p>
     </div>
-
-    <div class="expert-card expert-card-2 card-pos-2">
-      <div class="expert-avatar">&#x1F9E0;</div>
-      <div>
-        <div class="expert-name">Keynote Speaker</div>
-        <div class="expert-title">Board-Certified Clinician</div>
-      </div>
-    </div>
-
-    <div class="expert-card expert-card-3 card-pos-3">
-      <div class="expert-avatar">&#x2728;</div>
-      <div>
-        <div class="expert-name">20+ Experts</div>
-        <div class="expert-title">Physicians &middot; Researchers &middot; Advocates</div>
-      </div>
-    </div>
-
-    <!-- Scroll cue -->
-    <div class="scroll-cue" aria-hidden="true">
-      <span>Explore</span>
-      <svg viewBox="0 0 24 24" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-
   </section>
 
   <!-- Marquee -->
@@ -493,197 +550,284 @@
     </div>
   </div>
 
-  <!-- Audience Stats -->
+  <!-- Why This Audience Matters -->
+  <section class="audience-section">
+    <div class="audience-grid fade-in">
+      <div>
+        <p class="audience-label">Why This Audience Matters</p>
+        <h2>Midlife Women Are Driving the Longevity Economy</h2>
+        <p>Women in midlife are actively making decisions across healthcare, wellness, fitness, nutrition, beauty, financial planning, travel, and healthy aging.</p>
+        <p><strong>They're not passive consumers.</strong><br>
+        They're decision-makers seeking trusted solutions. They're researching. They're investing. They're ready to act.</p>
+        <p>elevatePAUSE brings together an engaged audience seeking credible information, meaningful connection, and practical solutions for midlife health and longevity.</p>
+      </div>
+      <div>
+        <img
+          src="/assets/networking-women-web.jpg"
+          alt="Women networking at elevatePAUSE"
+          class="audience-photo"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Who You're Reaching -->
   <section class="stats-section">
     <p class="section-label">The Audience</p>
     <h2>Who You're Reaching</h2>
     <div class="stats-grid">
       <div class="stat-card">
-        <span class="stat-number" data-target="500" data-suffix="+">500+</span>
-        <p>High-intent women attending in person — not passive scrollers, people ready to act.</p>
+        <span class="stat-number">500+</span>
+        <p>High-intent women attending in person — researching, investing, and ready to act.</p>
       </div>
       <div class="stat-card">
-        <span class="stat-number" data-target="20" data-suffix="+">20+</span>
-        <p>Board-certified physicians, menopause specialists, and wellness researchers on stage.</p>
+        <span class="stat-number">20+</span>
+        <p>Expert faculty: board-certified physicians, menopause specialists, and researchers on stage.</p>
       </div>
       <div class="stat-card">
-        <span class="stat-number" data-target="2" data-suffix=" Days">2 Days</span>
-        <p>Immersive programming across sessions, breakouts, exhibits, and networking.</p>
+        <span class="stat-number">40&ndash;60</span>
+        <p>Peak purchasing power years. Women in their prime earning and spending decade.</p>
       </div>
       <div class="stat-card">
-        <span class="stat-number" data-target="40" data-suffix="–60">40–60</span>
-        <p>Primary age demographic — women in peak earning years with high purchasing power.</p>
+        <span class="stat-number">Oct 2&ndash;3</span>
+        <p>VIP reception and full summit experience across two immersive days in Atlanta.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sponsor Tiers -->
+  <!-- Partnership Tiers -->
   <section class="tiers-section">
-    <p class="section-label">Partnership Packages</p>
+    <p class="section-label">Strategic Partnership Opportunities</p>
     <div class="tiers-header fade-in">
-      <h2>Select Your Partnership</h2>
-      <p>Three tiers designed to match your goals — from brand visibility to deep community integration. All packages are capped to protect your visibility.</p>
+      <h2>Multiple Ways to Show Up. One High-Value Audience.</h2>
+      <p>Each partnership opportunity is intentionally designed to create meaningful visibility, engagement, and long-term value.</p>
     </div>
     <div class="tiers-grid">
 
+      <!-- Presenting Partner -->
+      <div class="tier-card featured has-badge">
+        <div class="tier-exclusive-badge">Exclusive</div>
+        <div class="tier-icon">&#x25C6;</div>
+        <div class="tier-name">Presenting Partner</div>
+        <div class="tier-price">$50,000</div>
+        <div class="tier-availability">Exclusive &bull; 1 Available</div>
+        <div class="tier-tagline">Lead the conversation. Shape the experience.</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#x2713;</span>Signature Mainstage Integration</li>
+          <li><span class="tier-check">&#x2713;</span>VIP Room Activation + Curated Access</li>
+          <li><span class="tier-check">&#x2713;</span>Audience Intelligence &amp; Survey Insights</li>
+          <li><span class="tier-check">&#x2713;</span><a href="https://balancedocuseries.com" target="_blank" rel="noopener">BALANCE Documentary</a> Screening Sponsorship</li>
+        </ul>
+        <a href="mailto:hello@elevatepause.com?subject=Presenting%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
+      </div>
+
+      <!-- Category Partner -->
+      <div class="tier-card">
+        <div class="tier-icon">&#x2605;</div>
+        <div class="tier-name">Category Partner</div>
+        <div class="tier-price">$30,000</div>
+        <div class="tier-availability">3 Available</div>
+        <div class="tier-tagline">Own your category. Stand apart from competitors.</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#x2713;</span>Category Exclusivity</li>
+          <li><span class="tier-check">&#x2713;</span>Premium Wellness Marketplace Activation</li>
+          <li><span class="tier-check">&#x2713;</span>Strategic Audience Insights</li>
+        </ul>
+        <a href="mailto:hello@elevatepause.com?subject=Category%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
+      </div>
+
+      <!-- Experience Partner -->
+      <div class="tier-card">
+        <div class="tier-icon">&#x2665;</div>
+        <div class="tier-name">Experience Partner</div>
+        <div class="tier-price">$20,000</div>
+        <div class="tier-availability">2 Available</div>
+        <div class="tier-tagline">Create memorable brand experiences.</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#x2713;</span>Exclusive Naming Rights</li>
+          <li><span class="tier-check">&#x2713;</span>Scheduled Brand Activations</li>
+          <li><span class="tier-check">&#x2713;</span>VIP &amp; Attendee Product Integration</li>
+        </ul>
+        <a href="mailto:hello@elevatepause.com?subject=Experience%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
+      </div>
+
+      <!-- Marketplace Partner -->
+      <div class="tier-card">
+        <div class="tier-icon">&#x25A0;</div>
+        <div class="tier-name">Marketplace Partner</div>
+        <div class="tier-price">$10,000</div>
+        <div class="tier-availability">2 Available</div>
+        <div class="tier-tagline">Meet attendees where discovery happens.</div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#x2713;</span>Dedicated Marketplace Presence</li>
+          <li><span class="tier-check">&#x2713;</span>Direct Audience Engagement</li>
+          <li><span class="tier-check">&#x2713;</span>Lead Generation Opportunities</li>
+        </ul>
+        <a href="mailto:hello@elevatepause.com?subject=Marketplace%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
+      </div>
+
       <!-- Community Partner -->
       <div class="tier-card">
+        <div class="tier-icon">&#x25CB;</div>
         <div class="tier-name">Community Partner</div>
-        <div class="tier-tagline">Brand presence and visibility with an engaged, health-focused audience.</div>
+        <div class="tier-price">$5,000</div>
+        <div class="tier-availability">Limited Availability</div>
+        <div class="tier-tagline">Join the conversation. Build visibility.</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
-          <li><span class="tier-check">✓</span>Logo on event signage and digital materials</li>
-          <li><span class="tier-check">✓</span>Exhibit hall table (1 day)</li>
-          <li><span class="tier-check">✓</span>2 complimentary GA tickets</li>
-          <li><span class="tier-check">✓</span>Social media mention (1 post)</li>
-          <li><span class="tier-check">✓</span>Brand inclusion in email to attendees</li>
+          <li><span class="tier-check">&#x2713;</span>Wellness Marketplace Presence</li>
+          <li><span class="tier-check">&#x2713;</span>Event Guide Recognition</li>
+          <li><span class="tier-check">&#x2713;</span>Dedicated QR Code Placement</li>
         </ul>
         <a href="mailto:hello@elevatepause.com?subject=Community%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
-      </div>
-
-      <!-- Premier Partner (featured) -->
-      <div class="tier-card featured">
-        <span class="tier-badge">Most Popular</span>
-        <div class="tier-name">Premier Partner</div>
-        <div class="tier-tagline">Deep integration with the event experience and our expert-led community.</div>
-        <div class="tier-divider"></div>
-        <ul class="tier-features">
-          <li><span class="tier-check">✓</span>Everything in Community Partner</li>
-          <li><span class="tier-check">✓</span>Exhibit hall table (both days)</li>
-          <li><span class="tier-check">✓</span>5 complimentary tickets (GA + Premier)</li>
-          <li><span class="tier-check">✓</span>Branded breakout session (30 min)</li>
-          <li><span class="tier-check">✓</span>Logo on stage backdrop</li>
-          <li><span class="tier-check">✓</span>Dedicated email feature to full list</li>
-          <li><span class="tier-check">✓</span>Product inclusion in swag bags</li>
-          <li><span class="tier-check">✓</span>3 social posts + story features</li>
-        </ul>
-        <a href="mailto:hello@elevatepause.com?subject=Premier%20Partner%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
-      </div>
-
-      <!-- Title Sponsor -->
-      <div class="tier-card">
-        <span class="tier-badge exclusive">Extremely Limited</span>
-        <div class="tier-name">Title Sponsor</div>
-        <div class="tier-tagline">Lead partner status. Maximum visibility, activation, and exclusive brand integration.</div>
-        <div class="tier-divider"></div>
-        <ul class="tier-features">
-          <li><span class="tier-check">✓</span>Everything in Premier Partner</li>
-          <li><span class="tier-check">✓</span>"Presented by" naming rights</li>
-          <li><span class="tier-check">✓</span>Opening or closing stage moment</li>
-          <li><span class="tier-check">✓</span>10 complimentary VIP tickets</li>
-          <li><span class="tier-check">✓</span>Private meet &amp; greet with speakers</li>
-          <li><span class="tier-check">✓</span>Co-branded content series (3 pieces)</li>
-          <li><span class="tier-check">✓</span>Year-round community integration</li>
-          <li><span class="tier-check">✓</span>First right of refusal for 2027</li>
-        </ul>
-        <a href="mailto:hello@elevatepause.com?subject=Title%20Sponsor%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="tier-cta">Inquire</a>
       </div>
 
     </div>
     <p class="tiers-note">Custom packages and activation ideas welcome. <a href="mailto:hello@elevatepause.com?subject=Custom%20Sponsorship%20%E2%80%94%20elevatePAUSE%E2%84%A2">Let's talk &rarr;</a></p>
   </section>
 
-  <!-- Deck -->
-  <section class="deck-section fade-in">
-    <p class="section-label">Partnership Deck</p>
-    <h2>Full Details</h2>
-    <p class="deck-subtitle">View audience profile, activation options, and full tier details.</p>
-    <div class="deck-embed-wrap">
-      <iframe
-        src="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view?embed"
-        allowfullscreen="allowfullscreen"
-        allow="fullscreen"
-        loading="lazy"
-        title="elevatePAUSE™ Sponsorship Deck"
-      ></iframe>
-    </div>
-    <p class="deck-fallback"><a href="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view" target="_blank" rel="noopener">Open full deck &rarr;</a></p>
-  </section>
-
-  <!-- Why Partner -->
-  <section class="why-section fade-in">
+  <!-- Why Brands Partner -->
+  <section class="why-section">
     <p class="section-label">Why elevatePAUSE™</p>
-    <h2>What Partners Get</h2>
+    <h2>Why Brands Partner with elevatePAUSE™</h2>
     <div class="why-grid">
       <div class="why-card">
-        <div class="why-card-icon">🎯</div>
-        <h3>High-Intent Audience</h3>
-        <p>Women aged 40–60 actively seeking wellness solutions. Not passive scrollers — people ready to act.</p>
+        <div class="why-card-icon">&#x2713;</div>
+        <h3>Exclusive Access</h3>
+        <p>Meaningful engagement with speakers, VIP guests, partners, and attendees across every activation point.</p>
       </div>
       <div class="why-card">
-        <div class="why-card-icon">🤝</div>
-        <h3>Community Trust</h3>
-        <p>Built on Atlanta's wellness community with expert-led programming that earns loyalty and drives word of mouth.</p>
+        <div class="why-card-icon">&#x1F4CA;</div>
+        <h3>Audience Intelligence</h3>
+        <p>Post-event survey opportunities and valuable consumer insights on the midlife wellness market.</p>
       </div>
       <div class="why-card">
-        <div class="why-card-icon">✦</div>
-        <h3>Premium Experience</h3>
-        <p>Elevated production quality. Your brand associated with excellence — not noise, not clutter.</p>
+        <div class="why-card-icon">&#x26A1;</div>
+        <h3>Category Protection</h3>
+        <p>Limited inventory and strategic exclusivity ensure greater brand impact — no competing noise.</p>
       </div>
       <div class="why-card">
-        <div class="why-card-icon">📣</div>
-        <h3>Multi-Channel Reach</h3>
-        <p>In-person, digital, email, and community touchpoints across the full experience arc.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-card-icon">🔬</div>
+        <div class="why-card-icon">&#x1F52C;</div>
         <h3>Expert Credibility</h3>
-        <p>Content anchored by board-certified physicians and specialists. Your brand earns trust by association.</p>
+        <p>Alignment with respected physicians, researchers, and thought leaders in women's health.</p>
       </div>
       <div class="why-card">
-        <div class="why-card-icon">⚡</div>
-        <h3>Capped Availability</h3>
-        <p>Packages are intentionally limited to protect sponsor visibility and attendee experience.</p>
+        <div class="why-card-icon">&#x1F6CD;&#xFE0F;</div>
+        <h3>Marketplace Activation</h3>
+        <p>Direct engagement with women actively seeking products, services, and solutions at peak intent.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">&#x1F4E1;</div>
+        <h3>Multi-Channel Reach</h3>
+        <p>Visibility before, during, and after the event through email, social, on-site, and digital promotions.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section fade-in">
-    <p class="section-label">Get Started</p>
-    <h2>Ready to Partner?</h2>
-    <p>Limited packages available for our 2026 inaugural summit. Reach out and we'll find the right fit.</p>
-    <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="hero-cta">Start the Conversation &rarr;</a>
+  <!-- Intentional Exclusivity + Prospectus -->
+  <section class="exclusivity-section">
+    <div class="exclusivity-grid fade-in">
+
+      <!-- Left: Exclusivity -->
+      <div>
+        <p class="exclusivity-label">Intentional Exclusivity</p>
+        <h2>Meaningful Visibility. Not Brand Clutter.</h2>
+        <p>Unlike large conferences where dozens of sponsors compete for attention, elevatePAUSE intentionally limits partnership opportunities to create a premium attendee experience and greater value for participating brands.</p>
+        <div class="exclusivity-counts">
+          <div class="exclusivity-count-row">
+            <span class="excl-num">1</span>
+            <span class="excl-tier">Presenting Partner</span>
+          </div>
+          <div class="exclusivity-count-row">
+            <span class="excl-num">3</span>
+            <span class="excl-tier">Category Partners</span>
+          </div>
+          <div class="exclusivity-count-row">
+            <span class="excl-num">2</span>
+            <span class="excl-tier">Experience Partners</span>
+          </div>
+          <div class="exclusivity-count-row">
+            <span class="excl-num">2</span>
+            <span class="excl-tier">Marketplace Partners</span>
+          </div>
+          <div class="exclusivity-count-row">
+            <span class="excl-num">Ltd</span>
+            <span class="excl-tier">Community Partners</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Prospectus -->
+      <div class="prospectus-side">
+        <p class="prospectus-label">Sponsorship Prospectus</p>
+        <h3>Explore the Full Sponsorship Prospectus</h3>
+        <p>Review audience insights, activation opportunities, partnership benefits, and full package details.</p>
+        <div class="deck-embed-wrap">
+          <iframe
+            src="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view?embed"
+            allowfullscreen="allowfullscreen"
+            allow="fullscreen"
+            loading="lazy"
+            title="elevatePAUSE™ Sponsorship Prospectus"
+          ></iframe>
+        </div>
+        <a href="https://www.canva.com/design/DAHIqq45RxM/z3SRwdAOPww3Nx8UbhXaIg/view" target="_blank" rel="noopener" class="prospectus-cta">Open Full Prospectus &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div>
+        <p class="section-label" style="text-align:left;">Get Started</p>
+        <h2>Ready to Reach Her Where It Matters?</h2>
+        <p>Women don't come to elevatePAUSE to browse. They come to learn, ask questions, discover solutions, and make informed decisions about their health, longevity, and quality of life. Partnership delivers meaningful visibility, authentic engagement, and lasting impact.</p>
+      </div>
+      <div class="cta-right">
+        <a href="mailto:hello@elevatepause.com?subject=Sponsorship%20Inquiry%20%E2%80%94%20elevatePAUSE%E2%84%A2" class="cta-big-btn">Start the Conversation &rarr;</a>
+        <div class="cta-limits">
+          <div class="cta-limits-title">Partnership Opportunities Are Intentionally Limited</div>
+          <ul>
+            <li>1 Presenting Partner</li>
+            <li>3 Category Partners</li>
+            <li>2 Experience Partners</li>
+            <li>2 Marketplace Partners</li>
+            <li>Limited Community Partners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p class="footer-brand">elevatePAUSE™ &nbsp;|&nbsp; A shiftHER™ Experience</p>
-    <p>&copy; 2026 shiftHER Inc. All rights reserved. &nbsp;|&nbsp; <a href="https://www.elevatepause.com">elevatepause.com</a></p>
+    <p class="footer-brand">elevatePAUSE™</p>
+    <p>Powered by <a href="https://www.shiftherinc.com" target="_blank" rel="noopener">shiftHER&trade;</a> and <a href="https://www.jessicashepherdmd.com/modern-meno-community" target="_blank" rel="noopener">ModernMeno</a></p>
+    <p style="margin-top:10px;">&copy; 2026 shiftHER Inc. All rights reserved. &nbsp;|&nbsp; <a href="https://www.elevatepause.com">elevatepause.com</a></p>
   </footer>
 
   <script>
-    // ── Nav scroll ──
+    // Nav scroll
     const siteNav = document.getElementById('site-nav');
     window.addEventListener('scroll', () => {
       siteNav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 
-    // ── Animated counters ──
-    function animateCounter(el) {
-      const target = parseInt(el.dataset.target, 10);
-      const suffix = el.dataset.suffix || '';
-      const duration = 1800;
-      const start = performance.now();
-      (function tick(now) {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      })(start);
-    }
-
-    // ── Intersection observer ──
+    // Intersection observer for all animated elements
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
-        const el = entry.target;
-        el.classList.add('visible');
-        const num = el.querySelector && el.querySelector('.stat-number[data-target]');
-        if (num) animateCounter(num);
-        observer.unobserve(el);
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-in, .stat-card, .tier-card, .why-card').forEach(el => observer.observe(el));
   </script>
