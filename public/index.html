@@ -228,7 +228,7 @@
     /* ── Five Reasons ── */
     .reasons-section {
       padding: 100px 40px;
-      background: var(--lavender-light);
+      background: var(--white);
     }
     .reasons-header {
       text-align: center;
@@ -350,16 +350,95 @@
     .expect-card h3 { font-size: 22px; color: var(--plum); margin-bottom: 10px; }
     .expect-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
-    /* ── Who it's for ── */
+    /* ── Speaker Strip ── */
+    .speakers-strip {
+      background: var(--white);
+      padding: 64px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(61,24,96,0.08);
+    }
+    .speakers-strip-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--plum-light);
+      margin-bottom: 36px;
+    }
+    .speakers-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 32px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto 36px;
+    }
+    .speaker-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      width: 130px;
+    }
+    .speaker-thumb img {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid var(--lavender);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .speaker-thumb:hover img { border-color: var(--plum-light); transform: translateY(-3px); }
+    .speaker-thumb-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--plum);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .speaker-thumb-title {
+      font-size: 11px;
+      color: var(--plum-light);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .speakers-strip-cta {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--plum);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(61,24,96,0.3);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    .speakers-strip-cta:hover { color: var(--plum-light); }
+
+    /* ── Five Reasons (white bg) ── */
+    .reasons-section {
+      background: var(--white) !important;
+    }
+
+    /* ── Who it's for (dark) ── */
     .who-section {
       padding: 100px 40px;
-      background: var(--lavender-light);
+      background: var(--plum-dark);
     }
     .who-section h2 {
       font-size: clamp(32px, 4vw, 48px);
-      color: var(--plum);
+      color: var(--white);
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 16px;
+    }
+    .who-section .who-subhead {
+      font-size: 17px;
+      color: var(--lavender);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto 60px;
+      line-height: 1.6;
     }
     .checklist {
       max-width: 680px;
@@ -372,12 +451,13 @@
     .check-item { display: flex; align-items: flex-start; gap: 16px; }
     .check-icon {
       flex-shrink: 0; width: 36px; height: 36px;
-      background: var(--plum-light);
+      background: rgba(200,196,232,0.15);
+      border: 1px solid rgba(200,196,232,0.3);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      color: white; font-size: 16px; font-weight: 700;
+      color: var(--lavender); font-size: 14px; font-weight: 700;
     }
-    .check-item p { font-size: 18px; color: var(--text-dark); line-height: 1.55; }
+    .check-item p { font-size: 18px; color: rgba(241,239,255,0.88); line-height: 1.55; }
 
     /* ── Waitlist / Form ── */
     .form-split {
@@ -713,6 +793,9 @@
       .hero-left { padding-right: 0; }
       .reasons-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .stats-grid, .expect-grid { grid-template-columns: 1fr; gap: 0; }
+      .speakers-grid { gap: 20px; }
+      .speaker-thumb { width: 100px; }
+      .speaker-thumb img { width: 72px; height: 72px; }
       .stat-card { border-top: none; border-bottom: 1px solid var(--lavender); }
       .form-split { grid-template-columns: 1fr; }
       .form-quote { display: none; }
@@ -796,9 +879,37 @@
     </div>
     <div class="hero-right fade-in">
       <div class="hero-img-wrap">
-        <img src="/assets/hero-women.jpg" alt="Women speakers at elevatePAUSE 2026 midlife summit in Atlanta" loading="eager" />
+        <img src="/assets/hero-summit.jpg" alt="Women connecting at elevatePAUSE 2026 midlife summit in Atlanta" loading="eager" />
       </div>
     </div>
+  </section>
+
+  <!-- SPEAKERS STRIP -->
+  <section class="speakers-strip fade-in">
+    <p class="speakers-strip-label">Featured Speakers &amp; Faculty</p>
+    <div class="speakers-grid">
+      <div class="speaker-thumb">
+        <img src="/assets/speakers/dr-jessica-shepherd-labcoat-web.jpg" alt="Dr. Jessica Shepherd" loading="lazy" />
+        <span class="speaker-thumb-name">Dr. Jessica Shepherd</span>
+        <span class="speaker-thumb-title">OB/GYN &amp; Menopause Specialist</span>
+      </div>
+      <div class="speaker-thumb">
+        <img src="/assets/speakers/dr-jila-senemar-web.jpg" alt="Dr. Jila Senemar" loading="lazy" />
+        <span class="speaker-thumb-name">Dr. Jila Senemar</span>
+        <span class="speaker-thumb-title">Women's Health Expert</span>
+      </div>
+      <div class="speaker-thumb">
+        <img src="/assets/speakers/stacey-brice-washington-web.jpg" alt="Stacey Brice Washington" loading="lazy" />
+        <span class="speaker-thumb-name">Stacey Brice Washington</span>
+        <span class="speaker-thumb-title">Health &amp; Wellness Advocate</span>
+      </div>
+      <div class="speaker-thumb">
+        <img src="/assets/speakers/dr-deretta-rhodes.png" alt="Dr. DeRetta Rhodes" loading="lazy" />
+        <span class="speaker-thumb-name">Dr. DeRetta Rhodes</span>
+        <span class="speaker-thumb-title">Leadership &amp; Wellness</span>
+      </div>
+    </div>
+    <a href="/speakers" class="speakers-strip-cta">View All Speakers &rarr;</a>
   </section>
 
   <!-- MARQUEE STRIP -->
@@ -940,6 +1051,7 @@
   <!-- WHO IT'S FOR -->
   <section class="who-section fade-in">
     <h2><!--VTL:who-headline-->This is for you if…<!--/VTL:who-headline--></h2>
+    <p class="who-subhead">Women navigating midlife who want real answers, expert guidance, and a community who gets it.</p>
     <ul class="checklist">
       <li class="check-item"><div class="check-icon">✓</div><p><!--VTL:who-1-->You're in your 40s or 50s and noticing changes in your body that no one has fully explained.<!--/VTL:who-1--></p></li>
       <li class="check-item"><div class="check-icon">✓</div><p><!--VTL:who-2-->You've Googled your symptoms at 2am and found more confusion than answers.<!--/VTL:who-2--></p></li>
