@@ -482,24 +482,37 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 600px;
-      background: var(--cream);
     }
     .form-quote {
+      position: relative;
       padding: 80px 60px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-right: 2px solid var(--plum-light);
+      overflow: hidden;
+    }
+    .form-quote-bg {
+      position: absolute; inset: 0;
+      background: url('/assets/atlanta-skyline-web.jpg') center center / cover no-repeat;
+      z-index: 0;
+    }
+    .form-quote-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(42,38,97,0.88) 0%, rgba(61,24,96,0.78) 50%, rgba(42,38,97,0.86) 100%);
+      z-index: 1;
+    }
+    .form-quote-inner {
+      position: relative; z-index: 2;
     }
     .form-quote blockquote {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 28px;
       font-weight: 600;
-      color: var(--plum);
+      color: var(--white);
       line-height: 1.4;
       margin-bottom: 24px;
     }
-    .form-quote p { font-size: 17px; color: var(--text-mid); line-height: 1.7; }
+    .form-quote p { font-size: 17px; color: rgba(255,255,255,0.78); line-height: 1.7; }
     .form-section {
       padding: 80px 60px;
       background: var(--lavender-light);
@@ -1087,8 +1100,12 @@
   <!-- WAITLIST FORM -->
   <section class="form-split" id="waitlist">
     <div class="form-quote">
-      <blockquote><!--VTL:waitlist-quote-->Understanding what's happening is powerful. Knowing what's possible changes everything.<!--/VTL:waitlist-quote--></blockquote>
-      <p><!--VTL:waitlist-subtext-->Two days. Atlanta, Georgia. October 2 &amp; 3, 2026.<!--/VTL:waitlist-subtext--></p>
+      <div class="form-quote-bg" aria-hidden="true"></div>
+      <div class="form-quote-overlay" aria-hidden="true"></div>
+      <div class="form-quote-inner">
+        <blockquote><!--VTL:waitlist-quote-->Understanding what's happening is powerful. Knowing what's possible changes everything.<!--/VTL:waitlist-quote--></blockquote>
+        <p><!--VTL:waitlist-subtext-->Two days. Atlanta, Georgia. October 2 &amp; 3, 2026.<!--/VTL:waitlist-subtext--></p>
+      </div>
     </div>
     <div class="form-section">
       <div id="form-container" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;gap:20px;">

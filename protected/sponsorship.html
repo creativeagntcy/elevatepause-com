@@ -6,7 +6,7 @@
   <title>Sponsorship Opportunities — elevatePAUSE™ 2026</title>
   <meta name="description" content="Partner with elevatePAUSE™ — a clinician-led midlife and longevity summit for women in Atlanta, October 2–3, 2026. Limited sponsorship packages available." />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="preload" as="image" href="/assets/atlanta-skyline-web.jpg" />
+  <link rel="preload" as="fetch" href="/assets/hero-video.mp4" crossorigin />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -59,17 +59,23 @@
     }
     .nav-cta:hover { background: var(--lime-hover); transform: translateY(-1px); }
 
-    /* ── Hero Photo ── */
+    /* ── Hero Video ── */
     .hero-photo {
       position: relative;
-      width: 100%; min-height: 100vh;
+      width: 100%; min-height: 100vh; min-height: 100svh;
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
     }
-    .hero-photo-bg {
-      position: absolute; inset: 0;
-      background: url('/assets/atlanta-skyline-web.jpg') center center / cover no-repeat;
-      z-index: 0;
+    .hero-video-bg {
+      position: absolute; inset: 0; z-index: 0; overflow: hidden;
+    }
+    .hero-video-bg video {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%; min-height: 100%;
+      width: auto; height: auto;
+      object-fit: cover;
     }
     .hero-photo-overlay {
       position: absolute; inset: 0;
@@ -491,7 +497,11 @@
 
   <!-- Hero -->
   <section class="hero-photo">
-    <div class="hero-photo-bg" aria-hidden="true"></div>
+    <div class="hero-video-bg" aria-hidden="true">
+      <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="/assets/hero-video.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="hero-photo-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Atlanta &nbsp;&middot;&nbsp; October 2&ndash;3, 2026</p>
