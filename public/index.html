@@ -128,11 +128,11 @@
       margin-bottom: 24px;
     }
     .hero h1 {
-      font-size: clamp(40px, 5.5vw, 76px);
+      font-size: clamp(28px, 3.8vw, 52px);
       font-weight: 600;
       color: var(--plum);
       margin-bottom: 16px;
-      line-height: 1.1;
+      line-height: 1.25;
       letter-spacing: -0.01em;
     }
     .hero h1 em {
@@ -703,16 +703,25 @@
   <section class="hero" id="about">
     <div class="hero-left fade-in">
       <p class="hero-eyebrow"><!--VTL:hero-eyebrow-->The summit at the intersection of midlife, menopause, and longevity.<!--/VTL:hero-eyebrow--></p>
-      <h1><!--VTL:hero-headline-primary-->You are not alone. There are answers. There is a path forward. And elevatePAUSE™ <!--/VTL:hero-headline-primary--><em><!--VTL:hero-headline-em-->is where that conversation begins.<!--/VTL:hero-headline-em--></em></h1>
+      <h1>
+        <span style="display:block; font-size: 1.1em; line-height:1.2; margin-bottom: 0.35em;"><!--VTL:hero-headline-primary-->You are not alone.<br>There are answers.<br>There is a path forward.<!--/VTL:hero-headline-primary--></span>
+        <span style="display:block; font-size: 0.72em; font-weight: 500; line-height:1.4; color: var(--text-mid);">And elevatePAUSE™ <em><!--VTL:hero-headline-em-->is where that conversation begins.<!--/VTL:hero-headline-em--></em></span>
+      </h1>
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-desc"><!--VTL:hero-paragraph-->Bringing together women, healthcare experts, advocates, innovators, and brands shaping the future of women's midlife health.<!--/VTL:hero-paragraph--></p>
       <!-- Countdown -->
-      <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lavender); margin-bottom: 8px;">The conversation begins in...</p>
-      <div class="hero-countdown" id="hero-countdown">
-        <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>
-        <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
-        <div class="countdown-unit"><span class="countdown-number" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
-        <div class="countdown-unit"><span class="countdown-number" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+      <div style="margin-bottom: 28px;">
+        <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lavender); margin-bottom: 10px;">The conversation begins in...</p>
+        <div class="hero-countdown" id="hero-countdown" style="margin-bottom: 16px;">
+          <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
+          <div class="countdown-unit"><span class="countdown-number" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
+        </div>
+        <div style="display:inline-flex; align-items:center; gap:14px; background: rgba(61,24,96,0.07); border: 1px solid rgba(61,24,96,0.12); border-radius: 8px; padding: 12px 18px; flex-wrap: wrap;">
+          <span style="font-size:13px; color: var(--plum); font-weight:500;">Don't miss out. Join the waitlist for updates on speakers, tickets, and more.</span>
+          <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#000; background:var(--lime-cta); padding:8px 16px; border-radius:4px; text-decoration:none; white-space:nowrap;">Join the Waitlist &rarr;</a>
+        </div>
       </div>
       <div class="hero-meta">
         <div class="hero-meta-item">
@@ -893,13 +902,13 @@
   <!-- WAITLIST FORM -->
   <section class="form-split" id="waitlist">
     <div class="form-quote">
-      <blockquote><!--VTL:waitlist-quote-->"The conversations midlife women have been waiting for."<!--/VTL:waitlist-quote--></blockquote>
-      <p><!--VTL:waitlist-subtext-->Two days. Atlanta, Georgia. October 2 &amp; 3, 2026. Join the waitlist to be first when tickets open — and to get early access to speaker announcements, agenda updates, and community updates.<!--/VTL:waitlist-subtext--></p>
+      <blockquote><!--VTL:waitlist-quote-->Understanding what's happening is powerful. Knowing what's possible changes everything.<!--/VTL:waitlist-quote--></blockquote>
+      <p><!--VTL:waitlist-subtext-->Two days. Atlanta, Georgia. October 2 &amp; 3, 2026.<!--/VTL:waitlist-subtext--></p>
     </div>
     <div class="form-section">
       <div id="form-container" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;gap:20px;">
-        <h2 class="form-title"><!--VTL:waitlist-form-title-->Be the First to Know<!--/VTL:waitlist-form-title--></h2>
-        <p class="form-subhead"><!--VTL:waitlist-form-subhead-->Join the waitlist. No spam. Just elevatePAUSE updates.<!--/VTL:waitlist-form-subhead--></p>
+        <h2 class="form-title"><!--VTL:waitlist-form-title-->Join the Waitlist<!--/VTL:waitlist-form-title--></h2>
+        <p class="form-subhead"><!--VTL:waitlist-form-subhead-->Join the waitlist to receive speaker announcements, registration updates, and event news.<!--/VTL:waitlist-form-subhead--></p>
         <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="btn-submit" style="display:inline-block;text-decoration:none;text-align:center;">Join the Waitlist &rarr;</a>
         <p class="form-disclaimer">No spam. Your information is never sold.</p>
       </div>
