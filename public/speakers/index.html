@@ -38,8 +38,9 @@
       background: var(--plum-dark); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-    .nav-brand { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; color: var(--white); text-decoration: none; }
-    .nav-brand span { color: var(--lavender); font-size: 13px; font-weight: 400; margin-left: 3px; }
+    .nav-brand { font-family: Georgia,'Times New Roman',serif; font-size: 16px; font-weight: 600; text-decoration: none; }
+    .nav-brand-e { color: var(--white); }
+    .nav-brand-p { color: var(--lavender); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
@@ -53,6 +54,7 @@
     .hero {
       background: var(--lavender-light);
       padding: 140px 40px 100px;
+      min-height: 80vh;
       display: grid;
       grid-template-columns: 55% 45%;
       align-items: center;
@@ -68,6 +70,53 @@
     .hero-right { display: flex; justify-content: center; }
     .hero-img-wrap { width: 100%; max-width: 380px; aspect-ratio: 4/5; border-radius: 0 100px 100px 0; overflow: hidden; }
     .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+    /* ── Atmosphere strip ── */
+    .atmosphere-section {
+      background: var(--plum-dark);
+      padding: 0;
+      overflow: hidden;
+    }
+    .atmosphere-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 360px;
+    }
+    .atmosphere-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .atmosphere-text {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .atmosphere-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--lime-cta);
+      margin-bottom: 16px;
+    }
+    .atmosphere-heading {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(24px, 3vw, 38px);
+      color: var(--white); line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .atmosphere-sub {
+      font-size: 16px; color: rgba(255,255,255,0.72);
+      line-height: 1.65; margin-bottom: 28px;
+    }
+    .atmosphere-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lime-cta); color: #000;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.06em;
+      padding: 12px 24px; border-radius: 6px; text-decoration: none;
+      transition: background 0.2s; align-self: flex-start;
+    }
+    .atmosphere-cta:hover { background: var(--lime-hover); }
 
     /* ── Speaker grid ── */
     .speakers-section {
@@ -187,6 +236,19 @@
     .footer-nav a { color: var(--lavender); text-decoration: none; font-size: 12px; }
     .footer-nav a:hover { color: var(--white); }
 
+    /* Speaker card stagger */
+    .speakers-grid .speaker-card {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .speakers-grid .speaker-card.visible { opacity: 1; transform: translateY(0); }
+    .speakers-grid .speaker-card:nth-child(1) { transition-delay: 0s; }
+    .speakers-grid .speaker-card:nth-child(2) { transition-delay: 0.1s; }
+    .speakers-grid .speaker-card:nth-child(3) { transition-delay: 0.2s; }
+    .speakers-grid .speaker-card:nth-child(4) { transition-delay: 0.3s; }
+    .speakers-grid .speaker-card:nth-child(5) { transition-delay: 0.4s; }
+    .speakers-grid .speaker-card:nth-child(6) { transition-delay: 0.5s; }
+
     /* ── Responsive ── */
     .section-divider { border: none; border-top: 1px solid var(--lavender); margin: 0; }
     @media (max-width: 900px) {
@@ -194,13 +256,19 @@
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--plum-dark); padding: 16px 24px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); gap: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
       .nav-hamburger { display: flex; }
-      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; min-height: auto; }
       .hero-right { display: none; }
+      .atmosphere-inner { grid-template-columns: 1fr; }
+      .atmosphere-img { height: 260px; }
+      .atmosphere-text { padding: 40px 24px; }
       .speakers-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
       .spotlight-inner { grid-template-columns: 1fr; }
       .spotlight-photo { max-width: 280px; margin: 0 auto; }
       .spotlight-pillars { grid-template-columns: repeat(2, 1fr); }
       .speakers-section, .spotlight-section, .cta-section { padding: 72px 24px; }
+    }
+    @media (max-width: 600px) {
+      .speakers-section, .spotlight-section, .cta-section { padding: 50px 20px; }
     }
     @media (max-width: 599px) {
       .speakers-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -211,7 +279,7 @@
 
   <!-- NAV -->
   <nav class="site-nav">
-    <a href="/" class="nav-brand">elevatePAUSE™ <span>2026</span></a>
+    <a href="/" class="nav-brand"><span class="nav-brand-e">elevate</span><span class="nav-brand-p">PAUSE™</span></a>
     <div class="nav-links" id="nav-links">
       <a href="/#about">About</a>
       <a href="/#experience">Experience</a>
@@ -309,6 +377,19 @@
     </div>
   </section>
 
+  <!-- ATMOSPHERE STRIP -->
+  <section class="atmosphere-section">
+    <div class="atmosphere-inner fade-in">
+      <img src="/assets/event-panel-wide.jpg" alt="elevatePAUSE speaker panel event" class="atmosphere-img" loading="lazy" />
+      <div class="atmosphere-text">
+        <p class="atmosphere-label">The elevatePAUSE Experience</p>
+        <h2 class="atmosphere-heading">Shaping the Midlife Conversation.</h2>
+        <p class="atmosphere-sub">A room full of women, clinicians, and advocates ready to have the conversations that matter. Join the waitlist to be first in line for tickets and speaker announcements.</p>
+        <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="atmosphere-cta">Join the Waitlist &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <hr class="section-divider" />
 
   <!-- FEATURED SPEAKER -->
@@ -355,6 +436,7 @@
       <a href="/sponsorship">Sponsors</a>
       <a href="/#faqs">FAQs</a>
     </nav>
+    <p style="margin-bottom:8px;">Powered by <a href="https://www.shiftherinc.com" target="_blank" rel="noopener" style="color:var(--lavender);text-decoration:none;">shiftHER&trade;</a> and <a href="https://www.jessicashepherdmd.com/modern-meno-community" target="_blank" rel="noopener" style="color:var(--lavender);text-decoration:none;">ModernMeno</a></p>
     <p>&copy; 2026 shiftHER Inc. All rights reserved. &nbsp;|&nbsp; Atlanta, GA</p>
   </footer>
 
@@ -366,6 +448,7 @@
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('.speaker-card').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
