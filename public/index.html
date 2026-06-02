@@ -515,37 +515,90 @@
     .footer-copy { color: rgba(255,255,255,0.65); }
 
     /* ── Countdown Timer ── */
+    /* ── Countdown Block ── */
+    .countdown-block {
+      margin-bottom: 36px;
+      padding: 24px 28px;
+      background: rgba(61,24,96,0.05);
+      border: 1px solid rgba(61,24,96,0.1);
+      border-radius: 12px;
+    }
+    .countdown-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--plum-light);
+      margin-bottom: 14px;
+    }
     .hero-countdown {
       display: flex;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 0;
+      margin-bottom: 20px;
       flex-wrap: wrap;
     }
     .countdown-unit {
       text-align: center;
-      background: rgba(61,24,96,0.08);
-      border: 1px solid rgba(61,24,96,0.18);
-      border-radius: 8px;
-      padding: 12px 18px;
-      min-width: 72px;
+      padding: 0 20px 0 0;
+      min-width: 64px;
+      position: relative;
+    }
+    .countdown-unit + .countdown-unit::before {
+      content: ':';
+      position: absolute;
+      left: -4px;
+      top: 2px;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--plum-light);
+      opacity: 0.5;
     }
     .countdown-number {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 600;
       color: var(--plum);
       line-height: 1;
       display: block;
+      letter-spacing: -0.02em;
     }
     .countdown-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--plum-light);
+      color: rgba(61,24,96,0.45);
       display: block;
-      margin-top: 5px;
+      margin-top: 6px;
     }
+    .countdown-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(61,24,96,0.08);
+      flex-wrap: wrap;
+    }
+    .countdown-cta-text {
+      font-size: 13px;
+      color: var(--text-mid);
+      flex: 1;
+      min-width: 160px;
+    }
+    .countdown-cta-btn {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--lime-cta);
+      padding: 9px 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .countdown-cta-btn:hover { background: var(--lime-hover); }
 
     /* ── Marquee Strip ── */
     .marquee-strip {
@@ -710,17 +763,17 @@
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-desc"><!--VTL:hero-paragraph-->Bringing together women, healthcare experts, advocates, innovators, and brands shaping the future of women's midlife health.<!--/VTL:hero-paragraph--></p>
       <!-- Countdown -->
-      <div style="margin-bottom: 28px;">
-        <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lavender); margin-bottom: 10px;">The conversation begins in...</p>
-        <div class="hero-countdown" id="hero-countdown" style="margin-bottom: 16px;">
+      <div class="countdown-block">
+        <p class="countdown-eyebrow">The conversation begins in...</p>
+        <div class="hero-countdown" id="hero-countdown">
           <div class="countdown-unit"><span class="countdown-number" id="cd-days">--</span><span class="countdown-label">Days</span></div>
           <div class="countdown-unit"><span class="countdown-number" id="cd-hours">--</span><span class="countdown-label">Hours</span></div>
           <div class="countdown-unit"><span class="countdown-number" id="cd-mins">--</span><span class="countdown-label">Mins</span></div>
           <div class="countdown-unit"><span class="countdown-number" id="cd-secs">--</span><span class="countdown-label">Secs</span></div>
         </div>
-        <div style="display:inline-flex; align-items:center; gap:14px; background: rgba(61,24,96,0.07); border: 1px solid rgba(61,24,96,0.12); border-radius: 8px; padding: 12px 18px; flex-wrap: wrap;">
-          <span style="font-size:13px; color: var(--plum); font-weight:500;">Don't miss out. Join the waitlist for updates on speakers, tickets, and more.</span>
-          <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#000; background:var(--lime-cta); padding:8px 16px; border-radius:4px; text-decoration:none; white-space:nowrap;">Join the Waitlist &rarr;</a>
+        <div class="countdown-cta-row">
+          <span class="countdown-cta-text">Don't miss out &mdash; get speaker announcements, tickets, and updates first.</span>
+          <a href="https://shifther.myflodesk.com/community" target="_blank" rel="noopener" class="countdown-cta-btn">Join the Waitlist &rarr;</a>
         </div>
       </div>
       <div class="hero-meta">
