@@ -1144,15 +1144,24 @@
 
     // ── Animated stat counters ──
     function animateCounter(el) {
-      const target = parseInt(el.dataset.target, 10);
+      const target = parseFloat(el.dataset.target);
       const prefix = el.dataset.prefix || '';
       const suffix = el.dataset.suffix || '';
-      const duration = 1800;
+      const duration = 1600;
       const start = performance.now();
       (function tick(now) {
         const p = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = prefix + Math.floor(eased * target) + suffix;
+        const val = eased * target;
+        // For targets <= 9, animate with one decimal to avoid sticking at 0
+        let display;
+        if (target <= 9) {
+          const dec = Math.round(val * 10) / 10;
+          display = p >= 1 ? target.toString() : dec.toFixed(1).replace('.0', '');
+        } else {
+          display = Math.floor(val);
+        }
+        el.textContent = prefix + display + suffix;
         if (p < 1) requestAnimationFrame(tick);
       })(start);
     }
