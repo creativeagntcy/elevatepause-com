@@ -421,6 +421,30 @@
       transition: border-color 0.2s, transform 0.2s;
     }
     .speaker-thumb:hover img { border-color: var(--plum-light); transform: translateY(-3px); }
+    .speaker-thumb--featured {
+      width: 180px;
+    }
+    .speaker-thumb--featured img {
+      width: 148px; height: 148px;
+      border: 3px solid var(--plum-light);
+    }
+    .speaker-thumb--featured .speaker-thumb-name {
+      font-size: 15px;
+    }
+    .speaker-thumb--featured .speaker-thumb-title {
+      font-size: 12px;
+    }
+    .speaker-featured-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--plum-light);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 2px;
+    }
     .speaker-thumb-name {
       font-size: 12px;
       font-weight: 600;
@@ -935,7 +959,8 @@
   <section class="speakers-strip fade-in">
     <p class="speakers-strip-label">Featured Speakers &amp; Faculty</p>
     <div class="speakers-grid">
-      <div class="speaker-thumb">
+      <div class="speaker-thumb speaker-thumb--featured">
+        <span class="speaker-featured-badge">Featured Speaker</span>
         <img src="/assets/speakers/dr-jessica-shepherd-labcoat-web.jpg" alt="Dr. Jessica Shepherd" loading="lazy" />
         <span class="speaker-thumb-name">Dr. Jessica Shepherd</span>
         <span class="speaker-thumb-title">OB/GYN &amp; Menopause Specialist</span>
