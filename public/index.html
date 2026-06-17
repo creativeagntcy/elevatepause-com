@@ -381,83 +381,81 @@
     .expect-card h3 { font-size: 22px; color: var(--plum); margin-bottom: 10px; }
     .expect-card p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
 
-    /* ── Speaker Strip ── */
-    .speakers-strip {
-      background: var(--white);
-      padding: 64px 40px;
-      text-align: center;
+    /* ── Featured Speaker ── */
+    .featured-speaker {
+      background: var(--lavender-light);
       border-bottom: 1px solid rgba(61,24,96,0.08);
+      overflow: hidden;
     }
-    .speakers-strip-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--plum-light);
-      margin-bottom: 36px;
+    .featured-speaker-inner {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      min-height: 580px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    .speakers-grid {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 32px;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto 36px;
+    .featured-speaker-photo {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--lavender) 0%, var(--plum-light) 100%);
     }
-    .speaker-thumb {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      width: 130px;
-    }
-    .speaker-thumb img {
-      width: 96px; height: 96px;
-      border-radius: 50%;
+    .featured-speaker-photo img {
+      width: 100%; height: 100%;
       object-fit: cover;
       object-position: center top;
-      border: 2px solid var(--lavender);
-      transition: border-color 0.2s, transform 0.2s;
+      display: block;
     }
-    .speaker-thumb:hover img { border-color: var(--plum-light); transform: translateY(-3px); }
-    .speaker-thumb--featured {
-      width: 180px;
+    .featured-speaker-body {
+      padding: 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .speaker-thumb--featured img {
-      width: 148px; height: 148px;
-      border: 3px solid var(--plum-light);
+    .featured-speaker-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--plum-light);
+      margin-bottom: 16px;
     }
-    .speaker-thumb--featured .speaker-thumb-name {
-      font-size: 15px;
+    .featured-speaker-badge {
+      display: inline-flex; align-items: center;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--white);
+      background: var(--plum-light); padding: 5px 14px;
+      border-radius: 20px; margin-bottom: 20px; align-self: flex-start;
     }
-    .speaker-thumb--featured .speaker-thumb-title {
-      font-size: 12px;
+    .featured-speaker-name {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(32px, 3.5vw, 48px);
+      color: var(--plum); line-height: 1.1; margin-bottom: 10px;
     }
-    .speaker-featured-badge {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--white);
-      background: var(--plum-light);
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 2px;
+    .featured-speaker-credential {
+      font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; color: var(--plum-light);
+      margin-bottom: 24px; line-height: 1.5;
     }
-    .speaker-thumb-name {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--plum);
-      text-align: center;
-      line-height: 1.3;
+    .featured-speaker-pills {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px;
     }
-    .speaker-thumb-title {
-      font-size: 11px;
-      color: var(--plum-light);
-      text-align: center;
-      line-height: 1.3;
+    .featured-speaker-pill {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--plum);
+      background: var(--white); border: 1px solid var(--lavender);
+      border-radius: 4px; padding: 5px 12px;
     }
+    .featured-speaker-bio {
+      font-size: 16px; color: var(--text-mid);
+      line-height: 1.8; margin-bottom: 32px; max-width: 480px;
+    }
+    .featured-speaker-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--plum);
+      text-decoration: none;
+      border-bottom: 2px solid rgba(61,24,96,0.25);
+      padding-bottom: 3px; align-self: flex-start;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .featured-speaker-cta:hover { border-color: var(--plum); }
     .speakers-strip-cta {
       font-size: 12px;
       font-weight: 700;
@@ -861,6 +859,10 @@
       .stats-section h2 { text-align: center; margin: 0 auto 48px; max-width: 680px; }
       .stats-grid { grid-template-columns: 1fr; gap: 0; }
       .expect-grid { grid-template-columns: 1fr; gap: 0; }
+      .featured-speaker-inner { grid-template-columns: 1fr; }
+      .featured-speaker-photo { height: 380px; }
+      .featured-speaker-body { padding: 40px 24px 48px; }
+      .featured-speaker-name { font-size: 32px; }
       .speakers-grid { gap: 20px; }
       .speaker-thumb { width: 100px; }
       .speaker-thumb img { width: 72px; height: 72px; }
@@ -955,18 +957,27 @@
     </div>
   </section>
 
-  <!-- SPEAKERS STRIP -->
-  <section class="speakers-strip fade-in">
-    <p class="speakers-strip-label">Featured Speaker &amp; Faculty</p>
-    <div class="speakers-grid">
-      <div class="speaker-thumb speaker-thumb--featured">
-        <span class="speaker-featured-badge">Featured Speaker</span>
-        <img src="/assets/speakers/dr-jessica-shepherd-labcoat-web.jpg" alt="Dr. Jessica Shepherd" loading="lazy" />
-        <span class="speaker-thumb-name">Dr. Jessica Shepherd</span>
-        <span class="speaker-thumb-title">OB/GYN &amp; Menopause Specialist</span>
+  <!-- FEATURED SPEAKER -->
+  <section class="featured-speaker fade-in">
+    <div class="featured-speaker-inner">
+      <div class="featured-speaker-photo">
+        <img src="/assets/speakers/dr-jessica-shepherd-labcoat-web.jpg" alt="Dr. Jessica Shepherd, OB-GYN and Menopause Expert" loading="lazy" />
+      </div>
+      <div class="featured-speaker-body">
+        <p class="featured-speaker-label">Featured Speaker &amp; Faculty</p>
+        <span class="featured-speaker-badge">Featured Speaker</span>
+        <h2 class="featured-speaker-name">Dr. Jessica Shepherd</h2>
+        <p class="featured-speaker-credential">Board-Certified OB-GYN &amp; Menopause Expert &nbsp;&middot;&nbsp; Author &nbsp;&middot;&nbsp; Media Contributor &nbsp;&middot;&nbsp; Women's Health Advocate</p>
+        <div class="featured-speaker-pills">
+          <span class="featured-speaker-pill">Menopause Medicine</span>
+          <span class="featured-speaker-pill">Hormonal Health</span>
+          <span class="featured-speaker-pill">Women's Longevity</span>
+          <span class="featured-speaker-pill">Perimenopause</span>
+        </div>
+        <p class="featured-speaker-bio">Dr. Jessica Shepherd is a board-certified OB-GYN and leading voice in women's midlife health. Nationally recognized for her work in menopause medicine and hormonal health, she brings evidence-based education and compassionate advocacy to women navigating perimenopause, menopause, and healthy aging.</p>
+        <a href="/speakers" class="featured-speaker-cta">View All Speakers &rarr;</a>
       </div>
     </div>
-    <a href="/speakers" class="speakers-strip-cta">View All Speakers &rarr;</a>
   </section>
 
   <!-- MARQUEE STRIP -->
