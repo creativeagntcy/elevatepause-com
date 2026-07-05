@@ -248,10 +248,10 @@
     }
     .balance-cta:hover { color: #fff; border-color: #fff; }
     .balance-visual {
-      aspect-ratio: 4/3; border-radius: 12px; overflow: hidden;
+      border-radius: 12px; overflow: hidden;
       box-shadow: 0 12px 48px rgba(0,0,0,0.3);
     }
-    .balance-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .balance-visual img { width: 100%; height: auto; display: block; }
     .balance-filmmakers {
       font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 12px; font-style: italic;
     }
@@ -522,7 +522,7 @@
       .stats-section, .tiers-section, .why-section, .audience-section,
       .exclusivity-section, .cta-section, .balance-section { padding: 70px 24px; }
       .balance-inner { grid-template-columns: 1fr; gap: 32px; }
-      .balance-visual { max-width: 400px; }
+      .balance-visual { max-width: 400px; margin: 0 auto; }
     }
   </style>
 </head>
