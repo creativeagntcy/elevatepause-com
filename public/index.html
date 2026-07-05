@@ -851,6 +851,26 @@
       .nav-hamburger { display: flex; }
       .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; min-height: auto; }
       .hero-right { display: none; }
+      .hero-left { padding-right: 0; }
+      .reasons-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .stats-split { max-width: 100%; }
+      .stats-grid { grid-template-columns: 1fr; gap: 0; }
+      .expect-grid { grid-template-columns: 1fr; gap: 0; }
+      .featured-speaker-inner { grid-template-columns: 1fr; }
+      .featured-speaker-photo { height: 380px; }
+      .featured-speaker-body { padding: 40px 24px 48px; }
+      .featured-speaker-name { font-size: 32px; }
+      .speakers-grid { gap: 20px; }
+      .speaker-thumb { width: 100px; }
+      .speaker-thumb img { width: 72px; height: 72px; }
+      .stat-card { border-top: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .form-split { grid-template-columns: 1fr; }
+      .form-quote { display: none; }
+      .form-section { padding: 60px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .reasons-section, .stats-section, .expect-section, .who-section, .faq-section, .testimonials-section { padding: 72px 24px; }
+    }
+
     /* ── Testimonials ── */
     .testimonials-section { padding: 100px 40px; background: var(--lavender-light); }
     .testimonials-inner { max-width: 760px; margin: 0 auto; text-align: center; }
@@ -885,25 +905,6 @@
     .testimonial-dot.active { background: var(--plum); transform: scale(1.2); }
     .testimonial-dot:hover { background: var(--plum-light); }
 
-      .hero-left { padding-right: 0; }
-      .reasons-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .stats-split { max-width: 100%; }
-      .stats-grid { grid-template-columns: 1fr; gap: 0; }
-      .expect-grid { grid-template-columns: 1fr; gap: 0; }
-      .featured-speaker-inner { grid-template-columns: 1fr; }
-      .featured-speaker-photo { height: 380px; }
-      .featured-speaker-body { padding: 40px 24px 48px; }
-      .featured-speaker-name { font-size: 32px; }
-      .speakers-grid { gap: 20px; }
-      .speaker-thumb { width: 100px; }
-      .speaker-thumb img { width: 72px; height: 72px; }
-      .stat-card { border-top: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
-      .form-split { grid-template-columns: 1fr; }
-      .form-quote { display: none; }
-      .form-section { padding: 60px 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .reasons-section, .stats-section, .expect-section, .who-section, .faq-section, .testimonials-section { padding: 72px 24px; }
-    }
     @media (max-width: 600px) {
       .reasons-section, .stats-section, .expect-section, .who-section, .faq-section, .testimonials-section { padding: 50px 20px; }
     }
