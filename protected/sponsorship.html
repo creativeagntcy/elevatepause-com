@@ -217,6 +217,45 @@
     }
     .stat-card p { font-size: 15px; color: var(--text-mid); line-height: 1.55; }
 
+    /* ── BALANCE Documentary ── */
+    .balance-section {
+      padding: 96px 40px;
+      background: var(--plum-dark);
+      color: #fff;
+    }
+    .balance-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    }
+    .balance-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--lime-cta); margin-bottom: 18px;
+    }
+    .balance-section h2 {
+      font-size: clamp(28px, 3.5vw, 42px); color: #fff;
+      line-height: 1.2; margin-bottom: 20px;
+    }
+    .balance-section p {
+      font-size: 17px; color: rgba(255,255,255,0.85);
+      line-height: 1.7; margin-bottom: 16px;
+    }
+    .balance-cta {
+      display: inline-block; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--lime-cta); text-decoration: none; margin-top: 8px;
+      border-bottom: 2px solid var(--lime-cta); padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .balance-cta:hover { color: #fff; border-color: #fff; }
+    .balance-visual {
+      aspect-ratio: 4/3; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.3);
+    }
+    .balance-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .balance-filmmakers {
+      font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 12px; font-style: italic;
+    }
+
     /* ── Tiers ── */
     .tiers-section { padding: 100px 40px; background: var(--cream); }
     .tiers-header { text-align: center; margin-bottom: 64px; }
@@ -481,7 +520,9 @@
       .why-grid { grid-template-columns: 1fr; }
       .hero-stats-row { flex-direction: column; align-items: center; }
       .stats-section, .tiers-section, .why-section, .audience-section,
-      .exclusivity-section, .cta-section { padding: 70px 24px; }
+      .exclusivity-section, .cta-section, .balance-section { padding: 70px 24px; }
+      .balance-inner { grid-template-columns: 1fr; gap: 32px; }
+      .balance-visual { max-width: 400px; }
     }
   </style>
 </head>
@@ -602,6 +643,23 @@
       <div class="stat-card">
         <span class="stat-number">Oct 2&ndash;3</span>
         <p>VIP reception and full summit experience across two immersive days in Atlanta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BALANCE Documentary -->
+  <section class="balance-section fade-in">
+    <div class="balance-inner">
+      <div class="balance-content">
+        <p class="balance-label">Signature Screening</p>
+        <h2>BALANCE: A Perimenopause Journey</h2>
+        <p>Following a Top 5 debut on Amazon Prime and Apple TV, the docuseries BALANCE: A Perimenopause Journey comes to elevatePAUSE&trade; 2026 as the exclusive Atlanta premiere of Episode 2.</p>
+        <p>Featuring Dr. Jessica Shepherd, the film documents two women navigating the realities, questions, and transformation of perimenopause in real time. Directors Sadhvi Siddhali Shree and Sadhvi Anubhuti bring a raw, compassionate lens to one of the least discussed transitions in a woman&rsquo;s life.</p>
+        <p class="balance-filmmakers">A Siddhayatan Tirth Productions film</p>
+        <a href="https://balancedocuseries.com" target="_blank" rel="noopener" class="balance-cta">Learn More &rarr;</a>
+      </div>
+      <div class="balance-visual">
+        <img src="https://balancedocuseries.com/wp-content/uploads/2024/09/BALANCE-Series-Key-Art.jpg" alt="BALANCE: A Perimenopause Journey docuseries" onerror="this.style.display='none'" />
       </div>
     </div>
   </section>
