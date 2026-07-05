@@ -854,21 +854,26 @@
     /* ── Testimonials ── */
     .testimonials-section { padding: 100px 40px; background: var(--lavender-light); }
     .testimonials-inner { max-width: 760px; margin: 0 auto; text-align: center; }
-    .testimonial-rotator { position: relative; min-height: 260px; display: flex; align-items: center; justify-content: center; }
+    .testimonial-rotator { position: relative; min-height: 320px; }
     .testimonial-slide {
-      display: none; padding: 0 20px;
-      animation: fadeIn 0.5s ease;
+      display: none;
     }
-    .testimonial-slide.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeUp 0.6s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .testimonial-quote {
       font-family: Georgia, 'Times New Roman', serif; font-size: clamp(20px, 2.5vw, 26px);
-      line-height: 1.6; color: var(--plum); margin-bottom: 24px; font-style: italic;
-      position: relative; padding: 0 0 0 0;
+      line-height: 1.6; color: var(--plum); margin-bottom: 28px; font-style: italic;
+      position: relative;
     }
     .testimonial-quote::before {
-      content: '\201C'; position: absolute; top: -28px; left: 50%; transform: translateX(-50%);
-      font-size: 72px; line-height: 1; color: var(--lavender); font-family: Georgia, serif;
+      content: '\201C'; display: block; font-size: 64px; line-height: 0.5;
+      color: var(--lavender); font-family: Georgia, serif; margin-bottom: 20px;
     }
     .testimonial-author { font-size: 17px; font-weight: 700; color: var(--plum); margin-bottom: 4px; }
     .testimonial-role { font-size: 14px; color: var(--text-mid); opacity: 0.7; }
