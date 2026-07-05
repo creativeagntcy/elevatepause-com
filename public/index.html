@@ -854,20 +854,25 @@
     /* ── Testimonials ── */
     .testimonials-section { padding: 100px 40px; background: var(--lavender-light); }
     .testimonials-inner { max-width: 760px; margin: 0 auto; text-align: center; }
-    .testimonial-rotator { position: relative; min-height: 280px; display: flex; align-items: center; justify-content: center; }
+    .testimonial-rotator { position: relative; min-height: 260px; display: flex; align-items: center; justify-content: center; }
     .testimonial-slide {
-      position: absolute; top: 0; left: 0; width: 100%; opacity: 0;
-      transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease;
-      pointer-events: none;
+      display: none; padding: 0 20px;
+      animation: fadeIn 0.5s ease;
     }
-    .testimonial-slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; position: relative; }
+    .testimonial-slide.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .testimonial-quote {
       font-family: Georgia, 'Times New Roman', serif; font-size: clamp(20px, 2.5vw, 26px);
       line-height: 1.6; color: var(--plum); margin-bottom: 24px; font-style: italic;
+      position: relative; padding: 0 0 0 0;
+    }
+    .testimonial-quote::before {
+      content: '\201C'; position: absolute; top: -28px; left: 50%; transform: translateX(-50%);
+      font-size: 72px; line-height: 1; color: var(--lavender); font-family: Georgia, serif;
     }
     .testimonial-author { font-size: 17px; font-weight: 700; color: var(--plum); margin-bottom: 4px; }
     .testimonial-role { font-size: 14px; color: var(--text-mid); opacity: 0.7; }
-    .testimonial-dots { display: flex; justify-content: center; gap: 10px; margin-top: 36px; }
+    .testimonial-dots { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
     .testimonial-dot {
       width: 10px; height: 10px; border-radius: 50%; border: none; cursor: pointer;
       background: var(--lavender); transition: background 0.25s, transform 0.25s; padding: 0;
